@@ -4,11 +4,12 @@
 - Lưu ý:
 + Chỉ sử dụng array (mảng tĩnh, có thể cấp phát động nếu cần thiết),
 tuyệt đối không sử dụng vector (nếu được dùng vector sẽ ghi rõ).
-+ Sử dụng C++ Template để có thể xây dựng cấu trúc dữ liệu với bất kì
-kiểu dữ liệu nào.
++ Sử dụng C++ Template để có thể xây dựng cấu trúc dữ liệu với bất kì kiểu dữ liệu nào.
 - Ghi chú:
 + Tận dụng tối đa cơ chế nạp chồng hàm (function overloading), để tránh phải nghĩ nhiều tên phức tạp cho hàm.
 + Nhớ chú thích độ phức tạp thời gian và không gian (Time complexity & Space complexity) của mỗi thuật toán.
++ Nhớ chú thích phạm vi (range) thực hiện của mỗi thuật toán.
++ Nhớ chú thích hàm sẽ trả về cái gì ?
 + Nhớ ghi chú cách sử dụng hàm.
 + Giả sử mọi dữ liệu đầu vào đều hợp lệ (không kiểm tra input, nếu không quá nghiêm trọng).
 + Trên thực tế, người ta thích sử dụng dạng vòng lặp hơn dạng đệ quy vì nó tránh được tình trạng
@@ -17,20 +18,20 @@ tràn bộ nhớ stack (stack overflow).
 
 =====================================================================================================================
 01. Thư viện Search (Tìm kiếm):
-- Linear search (Sequential search).
+- Linear search: Đã hoàn thành.
 
 - Binary search:
 + Binary search cơ bản:
-    . Dạng vòng lặp.
-    . Dạng đệ quy.
+    . Dạng vòng lặp: Đã hoàn thành.
+    . Dạng đệ quy: Đã hoàn thành.
 
-+ Binary search tìm First Occurrence:
-    . Dạng vòng lặp.
-    . Dạng đệ quy.
++ Binary search first occurrence:
+    . Dạng vòng lặp: Đã hoàn thành.
+    . Dạng đệ quy: Đã hoàn thành.
 
-+ Binary search tìm Last Occurrence:
-    . Dạng vòng lặp.
-    . Dạng đệ quy.
++ Binary search last occurrence:
+    . Dạng vòng lặp: Đã hoàn thành.
+    . Dạng đệ quy: Đã hoàn thành.
 
 + Lower_bound(value): tìm phần tử đầu tiên lớn hơn hay bằng (>=) value.
     . Dạng vòng lặp.
