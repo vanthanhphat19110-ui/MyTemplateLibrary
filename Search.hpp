@@ -1,9 +1,10 @@
 /* Thư viện Search. */
 /* Chú ý kiểu dữ liệu:
 01. const T& --> không copy (&) và không cho phép thay đổi (const).
-02. T& --> không copy (&) và cho phép thay đổi (no const).
-03. bool (*comp)(const T&, const T&) --> comparator so sánh a và b, cái nào nên đứng trước. */
+02. T& --> không copy (&) và cho phép thay đổi (no const). */
 // Chú ý điều kiện vòng lặp.
+
+#include <functional> // Chứa std::less<> mặc định.
 
 /* Linear search (Sequential search):
 - Vietnamese: Tìm kiếm tuyến tính (Tìm kiếm tuần tự).
@@ -11,6 +12,7 @@
 - Time complexity: O(n).
 - Space complexity: O(1).
 - Return: index of the first occurrence of value in array (if found), otherwise return -1. */
+
 template <typename T>
 int linearSearch(T arr[], int left, int right, const T &value)
 {
@@ -38,47 +40,49 @@ int linearSearch(T arr[], int sizeArr, const T &value)
 - Return: index of value in array (if found), otherwise return -1. */
 
 // Loop version.
-template <typename T>
-int binarySearch(T arr[], int left, int right, const T &value, bool (*comp)(const T &, const T &))
+
+template <typename T, typename Comp = std::less<T>>
+int binarySearch(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
         if (arr[mid] == value)
             return mid;
-        else if (comp(arr[mid], value))
+        else if (cmp(arr[mid], value))
             left = mid + 1;
-        else // comp(value, arr[mid])
+        else // cmp(value, arr[mid])
             right = mid - 1;
     }
     return -1;
 }
 
-template <typename T>
-int binarySearch(T arr[], int sizeArr, const T &value, bool (*comp)(const T &, const T &))
+template <typename T, typename Comp = std::less<T>>
+int binarySearch(T arr[], int sizeArr, const T &value, const Comp &cmp = Comp())
 {
-    return binarySearch(arr, 0, sizeArr - 1, value, comp);
+    return binarySearch(arr, 0, sizeArr - 1, value, cmp);
 }
 
 // Recursion version.
-template <typename T>
-int binarySearchRecursion(T arr[], int left, int right, const T &value, bool (*comp)(const T &, const T &))
+
+template <typename T, typename Comp = std::less<T>>
+int binarySearchRecursion(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
     if (left > right)
         return -1;
     int mid = left + (right - left) / 2;
     if (arr[mid] == value)
         return mid;
-    else if (comp(arr[mid], value))
-        return binarySearchRecursion(arr, mid + 1, right, value, comp);
-    else // comp(value, arr[mid])
-        return binarySearchRecursion(arr, left, mid - 1, value, comp);
+    else if (cmp(arr[mid], value))
+        return binarySearchRecursion(arr, mid + 1, right, value, cmp);
+    else // cmp(value, arr[mid])
+        return binarySearchRecursion(arr, left, mid - 1, value, cmp);
 }
 
-template <typename T>
-int binarySearchRecursion(T arr[], int sizeArr, const T &value, bool (*comp)(const T &, const T &))
+template <typename T, typename Comp = std::less<T>>
+int binarySearchRecursion(T arr[], int sizeArr, const T &value, const Comp &cmp = Comp())
 {
-    return binarySearchRecursion(arr, 0, sizeArr - 1, value, comp);
+    return binarySearchRecursion(arr, 0, sizeArr - 1, value, cmp);
 }
 
 /* Binary search first occurrence:
@@ -91,8 +95,9 @@ int binarySearchRecursion(T arr[], int sizeArr, const T &value, bool (*comp)(con
 - Return: index of the first occurrence of value in array (if found), otherwise return -1. */
 
 // Loop version.
-template <typename T>
-int binarySearchFirst(T arr[], int left, int right, const T &value, bool (*comp)(const T &, const T &))
+
+template <typename T, typename Comp = std::less<T>>
+int binarySearchFirst(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
     int index = -1;
     while (left <= right)
@@ -103,42 +108,43 @@ int binarySearchFirst(T arr[], int left, int right, const T &value, bool (*comp)
             index = mid;     // lưu vị trí tìm thấy.
             right = mid - 1; // tiếp tục tìm bên trái.
         }
-        else if (comp(arr[mid], value))
+        else if (cmp(arr[mid], value))
             left = mid + 1;
-        else // comp(value, arr[mid])
+        else // cmp(value, arr[mid])
             right = mid - 1;
     }
     return index;
 }
 
-template <typename T>
-int binarySearchFirst(T arr[], int sizeArr, const T &value, bool (*comp)(const T &, const T &))
+template <typename T, typename Comp = std::less<T>>
+int binarySearchFirst(T arr[], int sizeArr, const T &value, const Comp &cmp = Comp())
 {
-    return binarySearchFirst(arr, 0, sizeArr - 1, value, comp);
+    return binarySearchFirst(arr, 0, sizeArr - 1, value, cmp);
 }
 
 // Recursion version.
-template <typename T>
-int binarySearchFirstRecursion(T arr[], int left, int right, const T &value, bool (*comp)(const T &, const T &))
+
+template <typename T, typename Comp = std::less<T>>
+int binarySearchFirstRecursion(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
     if (left > right)
         return -1;
     int mid = left + (right - left) / 2;
     if (arr[mid] == value)
     {
-        int leftResult = binarySearchFirstRecursion(arr, left, mid - 1, value, comp);
+        int leftResult = binarySearchFirstRecursion(arr, left, mid - 1, value, cmp);
         return (leftResult == -1) ? mid : leftResult;
     }
-    else if (comp(arr[mid], value))
-        return binarySearchFirstRecursion(arr, mid + 1, right, value, comp);
-    else // comp(value, arr[mid])
-        return binarySearchFirstRecursion(arr, left, mid - 1, value, comp);
+    else if (cmp(arr[mid], value))
+        return binarySearchFirstRecursion(arr, mid + 1, right, value, cmp);
+    else // cmp(value, arr[mid])
+        return binarySearchFirstRecursion(arr, left, mid - 1, value, cmp);
 }
 
-template <typename T>
-int binarySearchFirstRecursion(T arr[], int sizeArr, const T &value, bool (*comp)(const T &, const T &))
+template <typename T, typename Comp = std::less<T>>
+int binarySearchFirstRecursion(T arr[], int sizeArr, const T &value, const Comp &cmp = Comp())
 {
-    return binarySearchFirstRecursion(arr, 0, sizeArr - 1, value, comp);
+    return binarySearchFirstRecursion(arr, 0, sizeArr - 1, value, cmp);
 }
 
 /* Binary search last occurrence:
@@ -151,8 +157,9 @@ int binarySearchFirstRecursion(T arr[], int sizeArr, const T &value, bool (*comp
 - Return: index of the last occurrence of value in array (if found), otherwise return -1. */
 
 // Loop version.
-template <typename T>
-int binarySearchLast(T arr[], int left, int right, const T &value, bool (*comp)(const T &, const T &))
+
+template <typename T, typename Comp = std::less<T>>
+int binarySearchLast(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
     int index = -1;
     while (left <= right)
@@ -163,40 +170,41 @@ int binarySearchLast(T arr[], int left, int right, const T &value, bool (*comp)(
             index = mid;    // lưu vị trí tìm thấy.
             left = mid + 1; // tiếp tục tìm bên phải.
         }
-        else if (comp(arr[mid], value))
+        else if (cmp(arr[mid], value))
             left = mid + 1;
-        else // comp(value, arr[mid])
+        else // cmp(value, arr[mid])
             right = mid - 1;
     }
     return index;
 }
 
-template <typename T>
-int binarySearchLast(T arr[], int sizeArr, const T &value, bool (*comp)(const T &, const T &))
+template <typename T, typename Comp = std::less<T>>
+int binarySearchLast(T arr[], int sizeArr, const T &value, const Comp &cmp = Comp())
 {
-    return binarySearchLast(arr, 0, sizeArr - 1, value, comp);
+    return binarySearchLast(arr, 0, sizeArr - 1, value, cmp);
 }
 
 // Recursion version.
-template <typename T>
-int binarySearchLastRecursion(T arr[], int left, int right, const T &value, bool (*comp)(const T &, const T &))
+
+template <typename T, typename Comp = std::less<T>>
+int binarySearchLastRecursion(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
     if (left > right)
         return -1;
     int mid = left + (right - left) / 2;
     if (arr[mid] == value)
     {
-        int rightResult = binarySearchLastRecursion(arr, mid + 1, right, value, comp);
+        int rightResult = binarySearchLastRecursion(arr, mid + 1, right, value, cmp);
         return (rightResult == -1) ? mid : rightResult;
     }
-    else if (comp(arr[mid], value))
-        return binarySearchLastRecursion(arr, mid + 1, right, value, comp);
-    else // comp(value, arr[mid])
-        return binarySearchLastRecursion(arr, left, mid - 1, value, comp);
+    else if (cmp(arr[mid], value))
+        return binarySearchLastRecursion(arr, mid + 1, right, value, cmp);
+    else // cmp(value, arr[mid])
+        return binarySearchLastRecursion(arr, left, mid - 1, value, cmp);
 }
 
-template <typename T>
-int binarySearchLastRecursion(T arr[], int sizeArr, const T &value, bool (*comp)(const T &, const T &))
+template <typename T, typename Comp = std::less<T>>
+int binarySearchLastRecursion(T arr[], int sizeArr, const T &value, const Comp &cmp = Comp())
 {
-    return binarySearchLastRecursion(arr, 0, sizeArr - 1, value, comp);
+    return binarySearchLastRecursion(arr, 0, sizeArr - 1, value, cmp);
 }
