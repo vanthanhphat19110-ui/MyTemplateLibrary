@@ -33,11 +33,11 @@ tràn bộ nhớ stack (stack overflow).
     . Dạng vòng lặp: Đã hoàn thành.
     . Dạng đệ quy: Đã hoàn thành.
 
-+ Lower_bound(value): tìm phần tử đầu tiên lớn hơn hay bằng (>=) value.
++ Lower_bound(value):
     . Dạng vòng lặp.
     . Dạng đệ quy.
 
-+ Upper_bound(value): tìm phần tử đầu tiên lớn hơn (>) value.
++ Upper_bound(value):
     . Dạng vòng lặp.
     . Dạng đệ quy.
 
