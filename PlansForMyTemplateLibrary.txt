@@ -56,25 +56,21 @@ tràn bộ nhớ stack (stack overflow).
 - Sử dụng comparator (bộ so sánh) để các hàm sort có thể sắp xếp với bất kì kiểu so sánh nào.
 Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần. 
 
-- Swap two values.
+- Swap two values: Đã hoàn thành.
 
-- Comparator:
-+ Ascending.
-+ Descending.
-
-- Selection sort.
+- Selection sort: Đã hoàn thành.
 
 - Insertion sort:
-+ Swap version.
-+ Shift version.
++ Swap version: Đã hoàn thành.
++ Shift version: Đã hoàn thành.
 
 - Binary insertion sort:
 + Swap version.
 + Shift version.
 
-- Bubble sort.
+- Bubble sort: Đã hoàn thành.
 
-- Cocktail shaker sort (Bidirectional bubble sort).
+- Cocktail shaker sort (Bidirectional bubble sort): Đã hoàn thành.
 
 - Quick sort:
 + Lomuto partition:
