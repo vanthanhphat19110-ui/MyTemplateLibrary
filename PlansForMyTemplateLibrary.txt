@@ -34,12 +34,14 @@ tràn bộ nhớ stack (stack overflow).
     . Dạng đệ quy: Đã hoàn thành.
 
 + Lower_bound(value):
-    . Dạng vòng lặp.
-    . Dạng đệ quy.
+    . Dạng vòng lặp: Đã hoàn thành.
+    . Dạng đệ quy: Đã hoàn thành.
 
 + Upper_bound(value):
-    . Dạng vòng lặp.
-    . Dạng đệ quy.
+    . Dạng vòng lặp: Đã hoàn thành.
+    . Dạng đệ quy: Đã hoàn thành.
+
++ Equal range: Đã hoàn thành.
 
 + Count occurrence.
 
