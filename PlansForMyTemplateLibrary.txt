@@ -119,7 +119,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 05. Thư viện Queue (Hàng đợi):
 - Note: Queue is based on Singly Linked List.
 - Thao tác: initialize, isEmpty, size, enqueue, dequeue, front, clear.
-- Trạng thái:
+- Trạng thái: Đã hoàn thành.
 =====================================================================================================================
 
 =====================================================================================================================
@@ -137,7 +137,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Xóa một node ở cuối.
     . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
     . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node có giá trị là số nguyên tố.
     . Xóa tất cả các node.
 
 + Search.
@@ -177,7 +176,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Xóa một node ở cuối.
     . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
     . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node có giá trị là số nguyên tố.
     . Xóa tất cả các node.
 
 + Search.
@@ -220,7 +218,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Xóa một node ở cuối.
     . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
     . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node có giá trị là số nguyên tố.
     . Xóa tất cả các node.
 
 + Search.
@@ -258,7 +255,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Xóa một node ở cuối.
     . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
     . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node có giá trị là số nguyên tố.
     . Xóa tất cả các node.
 
 + Search.
