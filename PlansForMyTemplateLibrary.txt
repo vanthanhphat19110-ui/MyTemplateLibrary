@@ -1,16 +1,13 @@
-/* Plans for my project: My Template Library. */
+/* Plans for my project: My C++ Template Library. */
 
 --------------------------------------------------------------------------------------------------------------------
 - Lưu ý:
 + Chỉ sử dụng array (mảng tĩnh, có thể cấp phát động nếu cần thiết),
 tuyệt đối không sử dụng vector (nếu được dùng vector sẽ ghi rõ).
 + Sử dụng C++ Template để có thể xây dựng cấu trúc dữ liệu với bất kì kiểu dữ liệu nào.
+
 - Ghi chú:
 + Tận dụng tối đa cơ chế nạp chồng hàm (function overloading), để tránh phải nghĩ nhiều tên phức tạp cho hàm.
-+ Nhớ chú thích độ phức tạp thời gian và không gian (Time complexity & Space complexity) của mỗi thuật toán.
-+ Nhớ chú thích phạm vi (range) thực hiện của mỗi thuật toán.
-+ Nhớ chú thích hàm sẽ trả về cái gì ?
-+ Nhớ ghi chú cách sử dụng hàm.
 + Giả sử mọi dữ liệu đầu vào đều hợp lệ (không kiểm tra input, nếu không quá nghiêm trọng).
 + Trên thực tế, người ta thích sử dụng dạng vòng lặp hơn dạng đệ quy vì nó tránh được tình trạng
 tràn bộ nhớ stack (stack overflow).
@@ -18,6 +15,12 @@ tràn bộ nhớ stack (stack overflow).
 
 =====================================================================================================================
 01. Thư viện Search (Tìm kiếm):
+
+- Ghi chú:
++ Nhớ chú thích độ phức tạp thời gian và không gian (Time complexity & Space complexity) của mỗi thuật toán.
++ Nhớ chú thích phạm vi (range) thực hiện của mỗi thuật toán.
++ Nhớ chú thích hàm sẽ trả về cái gì ?
+
 - Linear search: Đã hoàn thành.
 
 - Binary search:
@@ -48,11 +51,17 @@ tràn bộ nhớ stack (stack overflow).
 
 =====================================================================================================================
 02. Thư viện Sort (Sắp xếp):
+
+- Ghi chú:
++ Nhớ chú thích độ phức tạp thời gian và không gian (Time complexity & Space complexity) của mỗi thuật toán.
++ Nhớ chú thích phạm vi (range) thực hiện của mỗi thuật toán.
+
 - Theory of comparator:
 + Comparator is a boolean function.
 + Return:
     . TRUE: nếu sau khi sắp xếp, a đứng trước b.
     . FALSE: nếu sau khi sắp xếp, a đứng sau b.
+
 - Sử dụng comparator (bộ so sánh) để các hàm sort có thể sắp xếp với bất kì kiểu so sánh nào.
 Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần. 
 
@@ -125,309 +134,161 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 =====================================================================================================================
 06. Thư viện Singly Linked List (Danh sách liên kết đơn):
-- Version 01: chỉ có head.
-+ Initialize.
 
-+ Insert:
-    . Chèn node ở đầu.
-    . Chèn node ở cuối.
-    . Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
+- Initialize.
 
-+ Delete:
-    . Xóa một node ở đầu.
-    . Xóa một node ở cuối.
-    . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
-    . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node.
+- Insert:
++ Chèn node ở đầu.
++ Chèn node ở cuối.
++ Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
 
-+ Search.
+- Delete:
++ Xóa một node ở đầu.
++ Xóa một node ở cuối.
++ Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
++ Xóa tất cả các node có giá trị cụ thể.
++ Xóa tất cả các node.
 
-+ Print:
-    . In theo chiều thuận.
-    . In theo chiều nghịch.
+- Search.
 
-+ Reverse (Đảo chiều Singly Linked List).
+- Print:
++ In theo chiều thuận.
++ In theo chiều nghịch.
 
-+ isPalindrome (Kiểm tra tính đối xứng của Singly Linked List).
+- Reverse (Đảo chiều Singly Linked List).
 
-+ Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên hai Singly Linked Lists, phá hủy hai Singly Linked Lists đã cho).
+- isPalindrome (Kiểm tra tính đối xứng của Singly Linked List).
 
-+ hasCycle (Kiểm tra xem Singly Linked List có vòng hay không ?, nếu có tìm điểm vòng).
+- Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
++ Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
++ Thực hiện tại chỗ (nối trực tiếp trên hai Singly Linked Lists, phá hủy hai Singly Linked Lists đã cho).
 
-+ Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List).
+- hasCycle (Kiểm tra xem Singly Linked List có vòng hay không ?, nếu có tìm điểm vòng).
 
-+ Merge k Singly Linked Lists (Trộn k Singly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên k Singly Linked Lists, phá hủy k Singly Linked Lists đã cho).
+- Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List).
 
-+ Merge sort Singly Linked List.
----------------------------------------------------------------------------------------------------------------------
-- Version 02: chỉ có head và tail.
-+ Initialize.
+- Merge k Singly Linked Lists (Trộn k Singly Linked Lists đã được sắp xếp):
++ Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
++ Thực hiện tại chỗ (nối trực tiếp trên k Singly Linked Lists, phá hủy k Singly Linked Lists đã cho).
 
-+ Insert:
-    . Chèn node ở đầu.
-    . Chèn node ở cuối.
-    . Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
-
-+ Delete:
-    . Xóa một node ở đầu.
-    . Xóa một node ở cuối.
-    . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
-    . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node.
-
-+ Search.
-
-+ Print:
-    . In theo chiều thuận.
-    . In theo chiều nghịch.
-
-+ Reverse (Đảo chiều Singly Linked List).
-
-+ isPalindrome (Kiểm tra tính đối xứng của Singly Linked List).
-
-+ Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên hai Singly Linked Lists, phá hủy hai Singly Linked Lists đã cho).
-
-+ hasCycle (Kiểm tra xem Singly Linked List có vòng hay không ?, nếu có tìm điểm vòng).
-
-+ Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List).
-
-+ Merge k Singly Linked Lists (Trộn k Singly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên k Singly Linked Lists, phá hủy k Singly Linked Lists đã cho).
-
-+ Merge sort Singly Linked List.
+- Merge sort Singly Linked List.
 =====================================================================================================================
 
 =====================================================================================================================
 07. Thư viện Doubly Linked List (Danh sách liên kết đôi):
-- Version 01: chỉ có head.
-+ Initialize.
 
-+ Insert:
-    . Chèn node ở đầu.
-    . Chèn node ở cuối.
-    . Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
+- Initialize.
 
-+ Delete:
-    . Xóa một node ở đầu.
-    . Xóa một node ở cuối.
-    . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
-    . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node.
+- Insert:
++ Chèn node ở đầu.
++ Chèn node ở cuối.
++ Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
 
-+ Search.
+- Delete:
++ Xóa một node ở đầu.
++ Xóa một node ở cuối.
++ Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
++ Xóa tất cả các node có giá trị cụ thể.
++ Xóa tất cả các node.
 
-+ Print:
-    . In theo chiều thuận.
-    . In theo chiều nghịch.
+- Search.
 
-+ Reverse (Đảo chiều Doubly Linked List).
+- Print:
++ In theo chiều thuận.
++ In theo chiều nghịch.
 
-+ isPalindrome (Kiểm tra tính đối xứng của Doubly Linked List).
+- Reverse (Đảo chiều Doubly Linked List).
 
-+ Merge (Trộn hai Doubly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên hai Doubly Linked Lists, phá hủy hai Doubly Linked Lists đã cho).
+- isPalindrome (Kiểm tra tính đối xứng của Doubly Linked List).
 
-+ Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Doubly Linked List).
+- Merge (Trộn hai Doubly Linked Lists đã được sắp xếp):
++ Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
++ Thực hiện tại chỗ (nối trực tiếp trên hai Doubly Linked Lists, phá hủy hai Doubly Linked Lists đã cho).
 
-+ Merge k Doubly Linked Lists (Trộn k Doubly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên k Doubly Linked Lists, phá hủy k Doubly Linked Lists đã cho).
+- Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Doubly Linked List).
 
-+ Merge sort Doubly Linked List.
----------------------------------------------------------------------------------------------------------------------
-- Version 02: chỉ có head và tail.
-+ Initialize.
+- Merge k Doubly Linked Lists (Trộn k Doubly Linked Lists đã được sắp xếp):
++ Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
++ Thực hiện tại chỗ (nối trực tiếp trên k Doubly Linked Lists, phá hủy k Doubly Linked Lists đã cho).
 
-+ Insert:
-    . Chèn node ở đầu.
-    . Chèn node ở cuối.
-    . Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
-
-+ Delete:
-    . Xóa một node ở đầu.
-    . Xóa một node ở cuối.
-    . Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
-    . Xóa tất cả các node có giá trị cụ thể.
-    . Xóa tất cả các node.
-
-+ Search.
-
-+ Print:
-    . In theo chiều thuận.
-    . In theo chiều nghịch.
-
-+ Reverse (Đảo chiều Doubly Linked List).
-
-+ isPalindrome (Kiểm tra tính đối xứng của Doubly Linked List).
-
-+ Merge (Trộn hai Doubly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên hai Doubly Linked Lists, phá hủy hai Doubly Linked Lists đã cho).
-
-+ Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Doubly Linked List).
-
-+ Merge k Doubly Linked Lists (Trộn k Doubly Linked Lists đã được sắp xếp):
-    . Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
-    . Thực hiện tại chỗ (nối trực tiếp trên k Doubly Linked Lists, phá hủy k Doubly Linked Lists đã cho).
-
-+ Merge sort Doubly Linked List.
+- Merge sort Doubly Linked List.
 =====================================================================================================================
 
 =====================================================================================================================
 08. Thư viện Binary Tree (Cây nhị phân):
-- Version 01: không có node parent.
-+ Traversal:
-    . Preorder = Node - Left - Right.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Inorder = Left - Node - Right.
-        . In theo thứ tự tăng dần.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Reverse Inorder = Right - Node - Left.
-        . In theo thứ tự giảm dần.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Postorder = Left - Right - Node.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Levelorder = Duyệt theo từng tầng của cây.
-        . Sử dụng Queue.
 
-+ isCompleteTree (Kiểm tra xem Binary Tree có phải là Complete Tree hay không ?):
-    . Complete Tree (Cây hoàn chỉnh) là cây mà ở tẩng cuối cùng được làm đầy từ trái sang phải.
-
-+ isPerfectTree (Kiểm tra xem Binary Tree có phải là Perfect Tree hay không ?):
-    . Perfect Tree (Cây hoàn hảo) là cây mà ở tầng cuối cùng được làm đầy.
-
-+ isFullTree (Kiểm tra xem Binary Tree có phải là Full Tree hay không ?):
-    . Full Tree (Cây đầy đủ) là cây mà mỗi node hoặc không có con, hoặc có đủ con.
-
-+ isBinarySearchTree (Kiểm tra xem Binary Tree có phải là Binary Search Tree hay không ?):
-    . Binary Search Tree (Cây nhị phân tìm kiếm) là cây mà mỗi node đều lớn hơn cây con trái và nhỏ hơn cây con phải.
-
-+ isAVLTree (Kiểm tra xem Binary Tree có phải là AVL Tree hay không ?)
-    . AVL Tree là Binary Search Tree mà mỗi node có chỉ số cân bằng (balance) là -1, 0, 1.
-    . Chỉ số balance = Chiều cao cây con phải - Chiều cao cây con trái.
-
-+ isSymmetricTree (Kiểm tra xem Binary Tree có phải là Symmetric Tree hay không ?)
-    . Symmetric Tree là cây đối xứng.
+- Traversal:
++ Preorder = Node - Left - Right.
     . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng queue).
-
-+ Search on Binary Search Tree.
-    . Tìm kiếm nhị phân cơ bản.
-    . Tìm phần tử lớn thứ k trong Binary Search Tree.
-    . Tìm phần tử nhỏ thứ k trong Binary Search Tree.
-
-+ Tính chiều cao của cây.
+    . Dạng vòng lặp (sử dụng stack).
++ Inorder = Left - Node - Right.
+    . In theo thứ tự tăng dần.
     . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng queue).
+    . Dạng vòng lặp (sử dụng stack).
++ Reverse Inorder = Right - Node - Left.
+    . In theo thứ tự giảm dần.
+    . Dạng đệ quy.
+    . Dạng vòng lặp (sử dụng stack).
++ Postorder = Left - Right - Node.
+    . Dạng đệ quy.
+    . Dạng vòng lặp (sử dụng stack).
++ Levelorder = Duyệt theo từng tầng của cây.
+    . Sử dụng Queue.
 
-+ Cập nhật chỉ số balance.
+- isCompleteTree (Kiểm tra xem Binary Tree có phải là Complete Tree hay không ?):
++ Complete Tree (Cây hoàn chỉnh) là cây mà ở tẩng cuối cùng được làm đầy từ trái sang phải.
 
-+ Rotate (Xoay cây):
-    . Lệch trái-trái: xoay phải một lần thì cây sẽ tự cân bằng.
-    . Lệch phải-phải: xoay trái một lần thì cây sẽ tự cân bằng.
-    . Lệch trái-phải: xoay trái rồi xoay phải thì cây sẽ tự cân bằng.
-    . Lệch phải-trái: xoay phải rồi xoay trái thì cây sẽ tự cân bằng.
+- isPerfectTree (Kiểm tra xem Binary Tree có phải là Perfect Tree hay không ?):
++ Perfect Tree (Cây hoàn hảo) là cây mà ở tầng cuối cùng được làm đầy.
 
-+ Insert (Xây cây).
+- isFullTree (Kiểm tra xem Binary Tree có phải là Full Tree hay không ?):
++ Full Tree (Cây đầy đủ) là cây mà mỗi node hoặc không có con, hoặc có đủ con.
 
-+ Tìm node nhỏ nhất trong Binary Search Tree.
+- isBinarySearchTree (Kiểm tra xem Binary Tree có phải là Binary Search Tree hay không ?):
++ Binary Search Tree (Cây nhị phân tìm kiếm) là cây mà mỗi node đều lớn hơn cây con trái và nhỏ hơn cây con phải.
 
-+ Tìm node lớn nhất trong Binary Search Tree.
+- isAVLTree (Kiểm tra xem Binary Tree có phải là AVL Tree hay không ?)
++ AVL Tree là Binary Search Tree mà mỗi node có chỉ số cân bằng (balance) là -1, 0, 1.
++ Chỉ số balance = Chiều cao cây con phải - Chiều cao cây con trái.
 
-+ Delete (Xóa cây):
-    . Node bị xóa không có con: xóa node rồi trả về nullptr.
-    . Node bị xóa có một con: xóa node rồi trả về con của nó.
-    . Node bị xóa có hai con:
-        . Tìm node lớn nhất bên cây con trái để thay thế node bị xóa.
-        . Tìm node nhỏ nhất bên cây con phải để thay thể node bị xóa.
-        . Lý do: hai node này sẽ có giá trị gần nhất với giá trị của node bị xóa.
+- isSymmetricTree (Kiểm tra xem Binary Tree có phải là Symmetric Tree hay không ?)
++ Symmetric Tree là cây đối xứng.
++ Dạng đệ quy.
++ Dạng vòng lặp (sử dụng queue).
+
+- Search on Binary Search Tree.
++ Tìm kiếm nhị phân cơ bản.
++ Tìm phần tử lớn thứ k trong Binary Search Tree.
++ Tìm phần tử nhỏ thứ k trong Binary Search Tree.
+
+- Tính chiều cao của cây.
++ Dạng đệ quy.
++ Dạng vòng lặp (sử dụng queue).
+
+- Cập nhật chỉ số balance.
+
+- Rotate (Xoay cây):
++ Lệch trái-trái: xoay phải một lần thì cây sẽ tự cân bằng.
++ Lệch phải-phải: xoay trái một lần thì cây sẽ tự cân bằng.
++ Lệch trái-phải: xoay trái rồi xoay phải thì cây sẽ tự cân bằng.
++ Lệch phải-trái: xoay phải rồi xoay trái thì cây sẽ tự cân bằng.
+
+- Insert (Xây cây).
+
+- Tìm node nhỏ nhất trong Binary Search Tree.
+
+- Tìm node lớn nhất trong Binary Search Tree.
+
+- Delete (Xóa cây):
++ Node bị xóa không có con: xóa node rồi trả về nullptr.
++ Node bị xóa có một con: xóa node rồi trả về con của nó.
++ Node bị xóa có hai con:
+    . Tìm node lớn nhất bên cây con trái để thay thế node bị xóa.
+    . Tìm node nhỏ nhất bên cây con phải để thay thể node bị xóa.
+    . Lý do: hai node này sẽ có giá trị gần nhất với giá trị của node bị xóa.
     . Nhớ viết hàm deleteTree để xóa toàn bộ cây.
-+ Invert Binary Tree: lật ngược (mirror-flip) Binary Tree.
----------------------------------------------------------------------------------------------------------------------
-- Version 02: có node parent.
-+ Traversal:
-    . Preorder = Node - Left - Right.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Inorder = Left - Node - Right.
-        . In theo thứ tự tăng dần.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Reverse Inorder = Right - Node - Left.
-        . In theo thứ tự giảm dần.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Postorder = Left - Right - Node.
-        . Dạng đệ quy.
-        . Dạng vòng lặp (sử dụng stack).
-    . Levelorder = Duyệt theo từng tầng của cây.
-        . Sử dụng Queue.
 
-+ isCompleteTree (Kiểm tra xem Binary Tree có phải là Complete Tree hay không ?):
-    . Complete Tree (Cây hoàn chỉnh) là cây mà ở tẩng cuối cùng được làm đầy từ trái sang phải.
-
-+ isPerfectTree (Kiểm tra xem Binary Tree có phải là Perfect Tree hay không ?):
-    . Perfect Tree (Cây hoàn hảo) là cây mà ở tầng cuối cùng được làm đầy.
-
-+ isFullTree (Kiểm tra xem Binary Tree có phải là Full Tree hay không ?):
-    . Full Tree (Cây đầy đủ) là cây mà mỗi node hoặc không có con, hoặc có đủ con.
-
-+ isBinarySearchTree (Kiểm tra xem Binary Tree có phải là Binary Search Tree hay không ?):
-    . Binary Search Tree (Cây nhị phân tìm kiếm) là cây mà mỗi node đều lớn hơn cây con trái và nhỏ hơn cây con phải.
-
-+ isAVLTree (Kiểm tra xem Binary Tree có phải là AVL Tree hay không ?)
-    . AVL Tree là Binary Search Tree mà mỗi node có chỉ số cân bằng (balance) là -1, 0, 1.
-    . Chỉ số balance = Chiều cao cây con phải - Chiều cao cây con trái.
-
-+ isSymmetricTree (Kiểm tra xem Binary Tree có phải là Symmetric Tree hay không ?)
-    . Symmetric Tree là cây đối xứng.
-    . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng queue).
-
-+ Search on Binary Search Tree.
-    . Tìm kiếm nhị phân cơ bản.
-    . Tìm phần tử lớn thứ k trong Binary Search Tree.
-    . Tìm phần tử nhỏ thứ k trong Binary Search Tree.
-
-+ Tính chiều cao của cây.
-    . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng queue).
-
-+ Cập nhật chỉ số balance.
-
-+ Rotate (Xoay cây):
-    . Lệch trái-trái: xoay phải một lần thì cây sẽ tự cân bằng.
-    . Lệch phải-phải: xoay trái một lần thì cây sẽ tự cân bằng.
-    . Lệch trái-phải: xoay trái rồi xoay phải thì cây sẽ tự cân bằng.
-    . Lệch phải-trái: xoay phải rồi xoay trái thì cây sẽ tự cân bằng.
-
-+ Insert (Xây cây).
-
-+ Tìm node nhỏ nhất trong Binary Search Tree.
-
-+ Tìm node lớn nhất trong Binary Search Tree.
-
-+ Delete (Xóa cây):
-    . Node bị xóa không có con: xóa node rồi trả về nullptr.
-    . Node bị xóa có một con: xóa node rồi trả về con của nó.
-    . Node bị xóa có hai con:
-        . Tìm node lớn nhất bên cây con trái để thay thế node bị xóa.
-        . Tìm node nhỏ nhất bên cây con phải để thay thể node bị xóa.
-        . Lý do: hai node này sẽ có giá trị gần nhất với giá trị của node bị xóa.
-    . Nhớ viết hàm deleteTree để xóa toàn bộ cây.
-+ Invert Binary Tree: lật ngược (mirror-flip) Binary Tree.
+- Invert Binary Tree: lật ngược (mirror-flip) Binary Tree.
 =====================================================================================================================
 
 =====================================================================================================================
@@ -435,16 +296,17 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 - Note:
 - Thao tác: insert, remove, find, contains, size, clear.
 - Xử lý đụng độ (collision handling):
-    + Open addressing (địa chỉ mở):
-        . Linear probing: h(k) = (k + i) % size
-        . Quadratic probing: h(k) = (k + i*i) % size
-        . Double hashing: h(k) = h1(k) + i*h2(k)
-        . Note: h = hash, k = key, i = index, size = size of hash table. 
-    + Chaining (nối kết): sử dụng AVL Tree.
++ Open addressing (địa chỉ mở):
+    . Linear probing: h(k) = (k + i) % size
+    . Quadratic probing: h(k) = (k + i*i) % size
+    . Double hashing: h(k) = h1(k) + i*h2(k)
+    . Note: h = hash, k = key, i = index, size = size of hash table. 
++ Chaining (nối kết): sử dụng AVL Tree.
 =====================================================================================================================
 
 =====================================================================================================================
 10. Thư viện Graph (Đồ thị):
+
 - Terminology:
 + Vertex/Node: đỉnh/nút.
 + Edge: cạnh.
@@ -461,22 +323,31 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 + Đồ thị liên thông là đồ thị luôn luôn tồn tại một đường đi nối hai đỉnh bất kì.
 + Cây khung là đồ thị liên thông và không có chu trình.
 + Cây khung tối thiểu là cây khung có tổng trọng số là nhỏ nhất.
+
 - Thao tác:
+
 + DFS = Depth First Search (Duyệt theo chiều sâu).
     . Dạng đệ quy.
     . Dạng vòng lặp (sử dụng stack).
+
 + BFS = Breadth First Search (Duyệt theo chiều rộng).
     . Dạng đệ quy.
     . Dạng vòng lặp (sử dụng queue).
+
 + Thuật toán Prim.
+
 + Thuật toán Kruskal.
+
 + Thuật toán Dijkstra.
+
 + Topological sort.
+
 + Disjoint set.
 =====================================================================================================================
 
 =====================================================================================================================
 11. Thư viện Segment Tree (Cây phân đoạn):
+
 - Note: 
 + Segment Tree is 1-based.
 + Segment Tree giúp lưu thông tin trên cả một đoạn [left, right], chẳng hạn: min, max, gcd, lcm, xor.
@@ -496,6 +367,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 =====================================================================================================================
 12. Thư viện Fenwick Tree = Binary Indexed Tree (Cây nhị phân được đánh chỉ số):
+
 - Theory of Fenwick Tree:
 + Mặc dù Fenwick Tree là Binary Indexed Tree nhưng nó không phải là Binary Tree thực sự,
 tức là nó không có struct Node hay nó không lưu left/right child. Fenwick Tree chỉ đơn thuần là một mảng.
@@ -519,27 +391,34 @@ kết thúc tại idx, độ dài đoạn là lowbit(idx).
     . Công thức: idx -= lowbit(idx) hay idx -= idx & (-idx).
     . Mục đích: thay vì lấy thông tin của đoạn do node idx quản lý, ta chia đoạn đó thành các đoạn con không bị chồng lấn,
     rồi lấy thông tin trên từng đoạn con đó; sau đó, gộp các thông tin đó lại thành kết quả cuối cùng.
+
 - Thao tác: update, query.
 =====================================================================================================================
 
 =====================================================================================================================
 13. Thư viện Treap:
+
 - Note:
 + Treap = Binary Search Tree + Heap.
 + Có hai loại: Explicit Treap và Implicit Treap.
+
 - Thao tác: split, merge, insert, erase, query.
 + Node* merge(Node* a, Node* b): ghép mọi node trong a đứng trước b.
+
 + void split(Node* root, Node* &left, Node* &right, int k): tách thành
     . left = first k nodes.
     . right = remaining nodes.
+
 + insert:
     . split(root, A, B, pos).
     . root = merge(merge(A, newNode), B).
+
 + erase:
     . split(root, A, B, pos).
     . split(B, mid, C, 1).
     . delete mid.
     . root = merge(A, C).
+
 + query(left, right):
     . spilt(root, A, B, left).
     . split(B, mid, C, right - left + 1).
