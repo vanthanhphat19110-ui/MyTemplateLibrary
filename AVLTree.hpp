@@ -8,3 +8,9 @@ struct AVLNode
     AVLNode<T> *left, *right;
     AVLNode(const T &value) : data(value), height(1), left(nullptr), right(nullptr) {};
 };
+
+template <typename T>
+struct AVLTree
+{
+    AVLNode<T> *root;
+};
