@@ -31,13 +31,13 @@ bool isEmpty(const Queue<T> &q)
 }
 
 template <typename T>
-int getSize(const Queue<T> &q)
+int size(const Queue<T> &q)
 {
     return q.size;
 }
 
 template <typename T>
-const T &getFront(const Queue<T> &q)
+const T &front(const Queue<T> &q)
 {
     return q.front->data;
 }
