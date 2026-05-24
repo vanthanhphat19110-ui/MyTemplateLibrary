@@ -105,7 +105,8 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 03. Thư viện Priority Queue (Hàng đợi ưu tiên):
 - Note: Priority Queue is based on vector.
-- Thao tác: heapify up, heapify down, push, pop, peek.
+- Thao tác: initialize, isEmpty, size, heapify up, heapify down, push, pop, peek.
+- Trạng thái:
 =====================================================================================================================
 
 =====================================================================================================================
