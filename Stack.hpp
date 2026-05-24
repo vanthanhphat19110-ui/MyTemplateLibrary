@@ -29,13 +29,13 @@ bool isEmpty(const Stack<T> &st)
 }
 
 template <typename T>
-int getSize(const Stack<T> &st)
+int size(const Stack<T> &st)
 {
     return st.size;
 }
 
 template <typename T>
-const T &getTop(const Stack<T> &st)
+const T &top(const Stack<T> &st)
 {
     return st.top->data;
 }
