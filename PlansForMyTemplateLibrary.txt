@@ -65,8 +65,8 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 + Shift version: Đã hoàn thành.
 
 - Binary insertion sort:
-+ Swap version.
-+ Shift version.
++ Swap version: Đã hoàn thành.
++ Shift version: Đã hoàn thành.
 
 - Bubble sort: Đã hoàn thành.
 
@@ -74,18 +74,24 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 - Quick sort:
 + Lomuto partition:
-    . Chọn pivot là phần tử đầu.
-    . Chọn pivot là phần tử cuối.
+    . Chọn pivot là phần tử đầu: Đã hoàn thành.
+    . Chọn pivot là phần tử cuối: Đã hoàn thành.
 
 + Hoare partition:
-    . Chọn pivot là phần tử đầu.
-    . Chọn pivot là phần tử cuối.
-    . Chọn pivot là phần tử giữa.
-    . Chọn pivot là trung vị của phần tử đầu, phần tử giữa, phần tử cuối.
+    . Chọn pivot là phần tử đầu: Đã hoàn thành.
+    . Chọn pivot là phần tử cuối: Đã hoàn thành.
+    . Chọn pivot là phần tử giữa: Đã hoàn thành.
+    . Chọn pivot là trung vị của phần tử đầu, phần tử giữa, phần tử cuối: Đã hoàn thành.
 
-- Heap sort.
++ Dutch National Flag partition (Three Way partition):
+    . Chọn pivot là phần tử đầu: Đã hoàn thành.
+    . Chọn pivot là phần tử cuối: Đã hoàn thành.
+    . Chọn pivot là phần tử giữa: Đã hoàn thành.
+    . Chọn pivot là trung vị của phần tử đầu, phần tử giữa, phần tử cuối: Đã hoàn thành.
 
-- Merge sort.
+- Heap sort: Đã hoàn thành.
+
+- Merge sort: Đã hoàn thành.
 
 - Counting sort:
 + Version 01: chỉ xử lý số không âm.
