@@ -35,7 +35,7 @@ int getSize(const Stack<T> &st)
 }
 
 template <typename T>
-const T &top(const Stack<T> &st)
+const T &getTop(const Stack<T> &st)
 {
     return st.top->data;
 }
