@@ -30,7 +30,7 @@ bool isEmpty(const PriorityQueue<T> &pq)
 }
 
 template <typename T>
-int getSize(const PriorityQueue<T> &pq)
+int size(const PriorityQueue<T> &pq)
 {
     return pq.heap.size();
 }
