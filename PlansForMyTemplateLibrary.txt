@@ -94,12 +94,12 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 - Merge sort: Đã hoàn thành.
 
 - Counting sort:
-+ Version 01: chỉ xử lý số không âm.
-+ Version 02: xử lý cả số âm.
++ Version 01: chỉ xử lý số không âm: Đã hoàn thành.
++ Version 02: xử lý cả số âm: Đã hoàn thành.
 
 - Radix sort:
-+ Version 01: chỉ xử lý số không âm.
-+ Version 02: xử lý cả số âm.
++ Version 01: chỉ xử lý số không âm: Đã hoàn thành.
++ Version 02: xử lý cả số âm: Đã hoàn thành.
 =====================================================================================================================
 
 =====================================================================================================================
