@@ -218,6 +218,8 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 08. Thư viện Binary Tree (Cây nhị phân):
 
+- Initialize.
+
 - Traversal:
 + Preorder = Node - Left - Right.
     . Dạng đệ quy.
@@ -403,7 +405,7 @@ kết thúc tại idx, độ dài đoạn là lowbit(idx).
 + Treap = Binary Search Tree + Heap.
 + Có hai loại: Explicit Treap và Implicit Treap.
 
-- Thao tác: split, merge, insert, erase, query, clear.
+- Thao tác: initialize, split, merge, insert, erase, query, clear.
 + Node* merge(Node* a, Node* b): ghép mọi node trong a đứng trước b.
 
 + void split(Node* root, Node* &left, Node* &right, int k): tách thành
@@ -428,11 +430,11 @@ kết thúc tại idx, độ dài đoạn là lowbit(idx).
 =====================================================================================================================
 
 =====================================================================================================================
-14. Thư viện Deque:
+14. Thư viện Deque (Hàng đợi hai đầu):
 - Note: 
 + Deque = Double-Ended Queue = Hàng đợi hai đầu.
 + Deque is based on Implicit Treap.
-- Thao tác: pushFront, pushBack, popFront, popBack, getIndex, clear.
+- Thao tác: initialize, pushFront, pushBack, popFront, popBack, getIndex, clear.
 =====================================================================================================================
 
 =====================================================================================================================
