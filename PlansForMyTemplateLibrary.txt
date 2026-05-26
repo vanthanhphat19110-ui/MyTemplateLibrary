@@ -55,6 +55,7 @@ tràn bộ nhớ stack (stack overflow).
 - Ghi chú:
 + Nhớ chú thích độ phức tạp thời gian và không gian (Time complexity & Space complexity) của mỗi thuật toán.
 + Nhớ chú thích phạm vi (range) thực hiện của mỗi thuật toán.
++ Nhớ chú thích stability, in-place của mỗi thuật toán.
 
 - Theory of comparator:
 + Comparator is a boolean function.
@@ -334,11 +335,11 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Dạng đệ quy.
     . Dạng vòng lặp (sử dụng queue).
 
-+ Thuật toán Prim.
++ Thuật toán Prim: tìm cây khung tối thiểu.
 
-+ Thuật toán Kruskal.
++ Thuật toán Kruskal: tìm cây khung tối thiểu.
 
-+ Thuật toán Dijkstra.
++ Thuật toán Dijkstra: tìm đường đi ngắn nhất trên đồ thị có trọng số không âm.
 
 + Topological sort.
 
@@ -427,19 +428,27 @@ kết thúc tại idx, độ dài đoạn là lowbit(idx).
 =====================================================================================================================
 
 =====================================================================================================================
-14. Thư viện Red-Black Tree (Cây đỏ đen):
+14. Thư viện Deque:
+- Note: 
++ Deque = Double-Ended Queue = Hàng đợi hai đầu.
++ Deque is based on Implicit Treap.
+- Thao tác: pushFront, pushBack, popFront, popBack, getIndex.
+=====================================================================================================================
+
+=====================================================================================================================
+15. Thư viện Red-Black Tree (Cây đỏ đen):
 - Note: 
 - Thao tác:
 =====================================================================================================================
 
 =====================================================================================================================
-15. Thư viện AAA Tree (Cây ...):
+16. Thư viện AAA Tree (Cây ...):
 - Note: 
 - Thao tác:
 =====================================================================================================================
 
 =====================================================================================================================
-16. Thư viện Balance Tree (Cây cân bằng):
+17. Thư viện Balance Tree (Cây cân bằng):
 - Note: 
 - Thao tác:
 =====================================================================================================================
