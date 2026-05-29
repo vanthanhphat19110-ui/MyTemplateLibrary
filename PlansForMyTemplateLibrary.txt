@@ -258,11 +258,11 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 - Insert (Xây cây): Đã hoàn thành.
 
-- Tìm node nhỏ nhất trong AVL Tree: Đã hoàn thành.
+- findMin: Đã hoàn thành.
 
-- Tìm node lớn nhất trong AVL Tree: Đã hoàn thành.
+- findMax: Đã hoàn thành.
 
-- Delete (Xóa cây): Đã hoàn thành.
+- Remove (Xóa cây): Đã hoàn thành.
 + Node bị xóa không có con: xóa node rồi trả về nullptr.
 + Node bị xóa có một con: xóa node rồi trả về con của nó.
 + Node bị xóa có hai con:
@@ -271,7 +271,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Lý do: hai node này sẽ có giá trị gần nhất với giá trị của node bị xóa.
     . Nhớ viết hàm clear để xóa toàn bộ cây.
 
-- Binary Search on AVL Tree: Đã hoàn thành.
+- Binary search on AVL Tree: Đã hoàn thành.
 + Tìm kiếm nhị phân cơ bản.
 + kthSmallest.
 + kthBiggest.
