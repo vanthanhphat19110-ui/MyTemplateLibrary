@@ -168,6 +168,9 @@ AVLNode<T> *rotateRightLeft(AVLNode<T> *root)
 template <typename T>
 AVLNode<T> *rebalance(AVLNode<T> *root)
 {
+    if (root == nullptr)
+        return nullptr;
+
     update(root);
     int balance = calcBalance(root);
 
