@@ -224,86 +224,62 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 
 =====================================================================================================================
-08. Thư viện Binary Tree (Cây nhị phân):
+08. Thư viện AVL Tree:
 
-- Initialize.
+- Initialize: Đã hoàn thành.
 
-- isEmpty.
+- isEmpty: Đã hoàn thành.
 
-- Size.
+- Tính chiều cao của cây: Đã hoàn thành.
 
-- Traversal:
+- Tính số phần tử trong cây: Đã hoàn thành.
+
+- Traversal: Đã hoàn thành.
 + Preorder = Node - Left - Right.
-    . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng stack).
 + Inorder = Left - Node - Right.
     . In theo thứ tự tăng dần.
-    . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng stack).
 + Reverse Inorder = Right - Node - Left.
     . In theo thứ tự giảm dần.
-    . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng stack).
 + Postorder = Left - Right - Node.
-    . Dạng đệ quy.
-    . Dạng vòng lặp (sử dụng stack).
 + Levelorder = Duyệt theo từng tầng của cây.
-    . Sử dụng Queue.
+    . Sử dụng queue.
 
-- isCompleteTree (Kiểm tra xem Binary Tree có phải là Complete Tree hay không ?):
-+ Complete Tree (Cây hoàn chỉnh) là cây mà ở tẩng cuối cùng được làm đầy từ trái sang phải.
+- Cập nhật chỉ số trong cây: Đã hoàn thành.
 
-- isPerfectTree (Kiểm tra xem Binary Tree có phải là Perfect Tree hay không ?):
-+ Perfect Tree (Cây hoàn hảo) là cây mà ở tầng cuối cùng được làm đầy.
+- Tính chỉ số balance của mỗi node trong cây: Đã hoàn thành.
 
-- isFullTree (Kiểm tra xem Binary Tree có phải là Full Tree hay không ?):
-+ Full Tree (Cây đầy đủ) là cây mà mỗi node hoặc không có con, hoặc có đủ con.
-
-- isBinarySearchTree (Kiểm tra xem Binary Tree có phải là Binary Search Tree hay không ?):
-+ Binary Search Tree (Cây nhị phân tìm kiếm) là cây mà mỗi node đều lớn hơn cây con trái và nhỏ hơn cây con phải.
-
-- isAVLTree (Kiểm tra xem Binary Tree có phải là AVL Tree hay không ?)
-+ AVL Tree là Binary Search Tree mà mỗi node có chỉ số cân bằng (balance) là -1, 0, 1.
-+ Chỉ số balance = Chiều cao cây con phải - Chiều cao cây con trái.
-
-- isSymmetricTree (Kiểm tra xem Binary Tree có phải là Symmetric Tree hay không ?)
-+ Symmetric Tree là cây đối xứng.
-+ Dạng đệ quy.
-+ Dạng vòng lặp (sử dụng queue).
-
-- Search on Binary Search Tree.
-+ Tìm kiếm nhị phân cơ bản.
-+ Tìm phần tử lớn thứ k trong Binary Search Tree.
-+ Tìm phần tử nhỏ thứ k trong Binary Search Tree.
-
-- Tính chiều cao của cây.
-+ Dạng đệ quy.
-+ Dạng vòng lặp (sử dụng queue).
-
-- Cập nhật chỉ số balance.
-
-- Rotate (Xoay cây):
+- Rotate (Xoay cây): Đã hoàn thành.
 + Lệch trái-trái: xoay phải một lần thì cây sẽ tự cân bằng.
 + Lệch phải-phải: xoay trái một lần thì cây sẽ tự cân bằng.
 + Lệch trái-phải: xoay trái rồi xoay phải thì cây sẽ tự cân bằng.
 + Lệch phải-trái: xoay phải rồi xoay trái thì cây sẽ tự cân bằng.
 
-- Insert (Xây cây).
+- Rebalance: Đã hoàn thành.
 
-- Tìm node nhỏ nhất trong Binary Search Tree.
+- Insert (Xây cây): Đã hoàn thành.
 
-- Tìm node lớn nhất trong Binary Search Tree.
+- Tìm node nhỏ nhất trong AVL Tree: Đã hoàn thành.
 
-- Delete (Xóa cây):
+- Tìm node lớn nhất trong AVL Tree: Đã hoàn thành.
+
+- Delete (Xóa cây): Đã hoàn thành.
 + Node bị xóa không có con: xóa node rồi trả về nullptr.
 + Node bị xóa có một con: xóa node rồi trả về con của nó.
 + Node bị xóa có hai con:
     . Tìm node lớn nhất bên cây con trái để thay thế node bị xóa.
     . Tìm node nhỏ nhất bên cây con phải để thay thể node bị xóa.
     . Lý do: hai node này sẽ có giá trị gần nhất với giá trị của node bị xóa.
-    . Nhớ viết hàm deleteTree để xóa toàn bộ cây.
+    . Nhớ viết hàm clear để xóa toàn bộ cây.
 
-- Invert Binary Tree: lật ngược (mirror-flip) Binary Tree.
+- Binary Search on AVL Tree: Đã hoàn thành.
++ Tìm kiếm nhị phân cơ bản.
++ kthSmallest.
++ kthBiggest.
++ Lower_bound(value).
++ Upper_bound(value).
++ Rank(value).
++ Predecessor(value).
++ Successor(value).
 =====================================================================================================================
 
 =====================================================================================================================
