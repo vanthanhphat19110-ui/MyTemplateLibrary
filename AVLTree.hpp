@@ -191,7 +191,7 @@ AVLNode<T> *rebalance(AVLNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *insertAVLNode(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
+AVLNode<T> *insert(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
 {
     if (root == nullptr)
     {
@@ -199,18 +199,18 @@ AVLNode<T> *insertAVLNode(AVLNode<T> *root, const T &value, const Comp &cmp = Co
         return p;
     }
     if (cmp(value, root->data))
-        root->left = insertAVLNode(root->left, value, cmp);
+        root->left = insert(root->left, value, cmp);
     else if (cmp(root->data, value))
-        root->right = insertAVLNode(root->right, value, cmp);
+        root->right = insert(root->right, value, cmp);
     else // root->data == value
         return root;
     return rebalance(root);
 }
 
 template <typename T, typename Comp = std::less<T>>
-void insertAVLNode(AVLTree<T> &tree, const T &value, const Comp &cmp = Comp())
+void insert(AVLTree<T> &tree, const T &value, const Comp &cmp = Comp())
 {
-    tree.root = insertAVLNode(tree.root, value, cmp);
+    tree.root = insert(tree.root, value, cmp);
 }
 
 template <typename T>
@@ -234,14 +234,14 @@ AVLNode<T> *findMax(AVLNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *deleteAVLNode(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
+AVLNode<T> *remove(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
 {
     if (root == nullptr)
         return nullptr;
     if (cmp(value, root->data))
-        root->left = deleteAVLNode(root->left, value, cmp);
+        root->left = remove(root->left, value, cmp);
     else if (cmp(root->data, value))
-        root->right = deleteAVLNode(root->right, value, cmp);
+        root->right = remove(root->right, value, cmp);
     else // root->data == value
     {
         if (root->left == nullptr || root->right == nullptr)
@@ -254,16 +254,16 @@ AVLNode<T> *deleteAVLNode(AVLNode<T> *root, const T &value, const Comp &cmp = Co
         {
             AVLNode<T> *temp = findMax(root->left);
             root->data = temp->data;
-            root->left = deleteAVLNode(root->left, temp->data, cmp);
+            root->left = remove(root->left, temp->data, cmp);
         }
     }
     return rebalance(root);
 }
 
 template <typename T, typename Comp = std::less<T>>
-void deleteAVLNode(AVLTree<T> &tree, const T &value, const Comp &cmp = Comp())
+void remove(AVLTree<T> &tree, const T &value, const Comp &cmp = Comp())
 {
-    tree.root = deleteAVLNode(tree.root, value, cmp);
+    tree.root = remove(tree.root, value, cmp);
 }
 
 template <typename T, typename Comp = std::less<T>>
