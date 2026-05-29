@@ -291,6 +291,28 @@ bool isExisted(const AVLTree<T> &tree, const T &value, const Comp &cmp = Comp())
     return isExisted(tree.root, value, cmp);
 }
 
+template <typename T, typename Comp = std::less<T>>
+AVLNode<T> *find(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
+{
+    AVLNode<T> *curr = root;
+    while (curr != nullptr)
+    {
+        if (cmp(value, curr->data))
+            curr = curr->left;
+        else if (cmp(curr->data, value))
+            curr = curr->right;
+        else // curr->data == value
+            return curr;
+    }
+    return nullptr;
+}
+
+template <typename T, typename Comp = std::less<T>>
+AVLNode<T> *find(const AVLTree<T> &tree, const T &value, const Comp &cmp = Comp())
+{
+    return find(tree.root, value, cmp);
+}
+
 template <typename T>
 AVLNode<T> *kthSmallest(AVLNode<T> *root, int k)
 {
