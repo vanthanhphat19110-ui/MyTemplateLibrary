@@ -285,7 +285,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 09. Thư viện Hash Table (Bảng băm):
 - Note:
-- Thao tác: insert, remove, find, contains, size, clear.
+- Thao tác: initialize, currSize, getBucketIndex, isExisted, find, insert, remove, clear.
 - Xử lý đụng độ (collision handling):
 + Open addressing (địa chỉ mở):
     . Linear probing: h(k) = (k + i) % size
@@ -293,6 +293,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Double hashing: h(k) = h1(k) + i*h2(k)
     . Note: h = hash, k = key, i = index, size = size of hash table. 
 + Chaining (nối kết): sử dụng AVL Tree.
+- Trạng thái: Đã hoàn thành.
 =====================================================================================================================
 
 =====================================================================================================================
