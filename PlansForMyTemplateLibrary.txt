@@ -136,33 +136,39 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 06. Thư viện Singly Linked List (Danh sách liên kết đơn):
 
-- Initialize.
+- Initialize: Đã hoàn thành.
 
-- isEmpty.
+- isEmpty: Đã hoàn thành.
 
-- Size.
+- Size: Đã hoàn thành.
 
-- Insert:
+- Insert: Đã hoàn thành.
 + Chèn node ở đầu.
 + Chèn node ở cuối.
 + Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
 
-- Delete:
+- Delete: Đã hoàn thành.
 + Xóa một node ở đầu.
 + Xóa một node ở cuối.
 + Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
 + Xóa tất cả các node có giá trị cụ thể.
 + Xóa tất cả các node.
 
-- Search.
+- Search: Đã hoàn thành.
 
-- Print:
+- Print: Đã hoàn thành.
 + In theo chiều thuận.
 + In theo chiều nghịch.
 
-- Reverse (Đảo chiều Singly Linked List).
+- Reverse (Đảo chiều Singly Linked List): Đã hoàn thành.
 
-- isPalindrome (Kiểm tra tính đối xứng của Singly Linked List).
+- findMiddle (Tìm node ở giữa của Singly Linked List): Đã hoàn thành.
+
+- isSymmetric (Kiểm tra tính đối xứng của Singly Linked List): Đã hoàn thành.
+
+- kthFromTail: Đã hoàn thành.
+
+- rotateRight: Đã hoàn thành.
 
 - Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
 + Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
