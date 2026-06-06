@@ -166,9 +166,9 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 - isSymmetric (Kiểm tra tính đối xứng của Singly Linked List): Đã hoàn thành.
 
-- kthFromTail: Đã hoàn thành.
+- kthFromTail (Tìm node thứ k tính từ tail của Singly Linked List): Đã hoàn thành.
 
-- rotateRight: Đã hoàn thành.
+- rotateRight (xoay phải Singly Linked List k lần): Đã hoàn thành.
 
 - Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
 + Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
