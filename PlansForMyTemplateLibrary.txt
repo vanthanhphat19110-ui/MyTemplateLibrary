@@ -170,19 +170,21 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 - rotateRight (xoay phải Singly Linked List k lần): Đã hoàn thành.
 
-- Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
+- Merge (Trộn hai Singly Linked Lists đã được sắp xếp): Đã hoàn thành.
 + Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
 + Thực hiện tại chỗ (nối trực tiếp trên hai Singly Linked Lists, phá hủy hai Singly Linked Lists đã cho).
 
-- hasCycle (Kiểm tra xem Singly Linked List có vòng hay không ?, nếu có tìm điểm vòng).
+- Split (Chia đôi một Singly Linked List thành hai phần): Đã hoàn thành.
 
-- Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List).
+- Merge sort Singly Linked List: Đã hoàn thành.
+
+- Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List): Đã hoàn thành.
+
+- detectCycle (Kiểm tra xem Singly Linked List có vòng hay không ?, nếu có tìm điểm vòng).
 
 - Merge k Singly Linked Lists (Trộn k Singly Linked Lists đã được sắp xếp):
 + Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
 + Thực hiện tại chỗ (nối trực tiếp trên k Singly Linked Lists, phá hủy k Singly Linked Lists đã cho).
-
-- Merge sort Singly Linked List.
 =====================================================================================================================
 
 =====================================================================================================================

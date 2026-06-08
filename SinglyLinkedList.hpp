@@ -525,3 +525,30 @@ void mergeSortList(SinglyLinkedList<T> &list, const Comp &cmp = Comp())
     mergeSortList(rightHalf, cmp);
     mergeTwoSortedListsInPlace(leftHalf, rightHalf, list, cmp);
 }
+
+template <typename T>
+void swapNodesInPairs(SinglyLinkedList<T> &list)
+{
+    if (list.head == nullptr || list.head->next == nullptr)
+        return;
+    SLLNode<T> *dummy = new SLLNode<T>();
+    dummy->next = list.head;
+    SLLNode<T> *prev = dummy;
+    while (prev->next != nullptr && prev->next->next != nullptr)
+    {
+        SLLNode<T> *first = prev->next;
+        SLLNode<T> *second = first->next;
+        first->next = second->next;
+        second->next = first;
+        prev->next = second;
+        prev = first;
+    }
+
+    list.head = dummy->next;
+    delete dummy;
+
+    SLLNode<T> *curr = list.head;
+    while (curr->next != nullptr)
+        curr = curr->next;
+    list.tail = curr;
+}
