@@ -1,6 +1,7 @@
 /* Singly Linked List. */
 
 #include <iostream>
+#include <functional>
 
 // SLL = Singly Linked List.
 template <typename T>
@@ -8,6 +9,7 @@ struct SLLNode
 {
     T data;
     SLLNode<T> *next;
+    SLLNode() : data(), next(nullptr) {};
     SLLNode(const T &value) : data(value), next(nullptr) {};
 };
 
@@ -373,4 +375,153 @@ void rotateRight(SinglyLinkedList<T> &list, int k)
     newTail->next = nullptr;
     list.head = newHead;
     list.tail = newTail;
+}
+
+/*
+- Merge two sorted lists: tạo list mới để lưu kết quả.
+- Điều kiện: list1 và list2 đều đã được sắp xếp theo cmp.
+- Sau khi merge, không làm thay đổi list1 và list2. */
+template <typename T, typename Comp = std::less<T>>
+SinglyLinkedList<T> mergeTwoSortedLists(const SinglyLinkedList<T> &list1, const SinglyLinkedList<T> &list2, const Comp &cmp = Comp())
+{
+    SinglyLinkedList<T> ans;
+    init(ans);
+
+    SLLNode<T> *p1 = list1.head, *p2 = list2.head;
+    while (p1 != nullptr && p2 != nullptr)
+    {
+        if (cmp(p2->data, p1->data))
+        {
+            insertAtBack(ans, p2->data);
+            p2 = p2->next;
+        }
+        else
+        {
+            insertAtBack(ans, p1->data);
+            p1 = p1->next;
+        }
+    }
+
+    while (p1 != nullptr)
+    {
+        insertAtBack(ans, p1->data);
+        p1 = p1->next;
+    }
+
+    while (p2 != nullptr)
+    {
+        insertAtBack(ans, p2->data);
+        p2 = p2->next;
+    }
+
+    return ans;
+}
+
+/*
+- Merge two sorted lists: thực hiện tại chỗ (không tạo list mới để lưu kết quả).
+- Điều kiện: list1 và list2 đã được sắp xếp theo cmp.
+- Sau khi merge, gộp list1 và list2 thành list ans. */
+template <typename T, typename Comp = std::less<T>>
+void mergeTwoSortedListsInPlace(SinglyLinkedList<T> &list1, SinglyLinkedList<T> &list2, SinglyLinkedList<T> &ans, const Comp &cmp = Comp())
+{
+    clear(ans);
+    ans.size = list1.size + list2.size;
+
+    SLLNode<T> *dummy = new SLLNode<T>();
+    SLLNode<T> *tail = dummy, *p1 = list1.head, *p2 = list2.head;
+
+    while (p1 != nullptr && p2 != nullptr)
+    {
+        if (cmp(p2->data, p1->data))
+        {
+            tail->next = p2;
+            p2 = p2->next;
+        }
+        else
+        {
+            tail->next = p1;
+            p1 = p1->next;
+        }
+        tail = tail->next;
+    }
+
+    if (p1 != nullptr)
+    {
+        tail->next = p1;
+        tail = list1.tail;
+    }
+    else
+    {
+        tail->next = p2;
+        tail = list2.tail;
+    }
+
+    ans.head = dummy->next;
+    ans.tail = tail;
+    delete dummy;
+
+    list1.head = nullptr;
+    list1.tail = nullptr;
+    list1.size = 0;
+
+    list2.head = nullptr;
+    list2.tail = nullptr;
+    list2.size = 0;
+}
+
+template <typename T>
+void splitList(SinglyLinkedList<T> &list, SinglyLinkedList<T> &leftHalf, SinglyLinkedList<T> &rightHalf)
+{
+    if (list.head == nullptr || list.head->next == nullptr)
+    {
+        leftHalf.head = list.head;
+        leftHalf.tail = list.tail;
+        leftHalf.size = list.size;
+
+        rightHalf.head = nullptr;
+        rightHalf.tail = nullptr;
+        rightHalf.size = 0;
+    }
+    else // list.head != nullptr && list.head->next != nullptr
+    {
+        SLLNode<T> *slow = list.head, *fast = list.head->next;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        int leftSize = (list.size + 1) / 2;
+        int rightSize = list.size - leftSize;
+
+        leftHalf.head = list.head;
+        leftHalf.tail = slow;
+        leftHalf.size = leftSize;
+
+        rightHalf.head = slow->next;
+        rightHalf.tail = list.tail;
+        rightHalf.size = rightSize;
+
+        slow->next = nullptr; // split
+    }
+
+    list.head = nullptr;
+    list.tail = nullptr;
+    list.size = 0;
+}
+
+template <typename T, typename Comp = std::less<T>>
+void mergeSortList(SinglyLinkedList<T> &list, const Comp &cmp = Comp())
+{
+    if (list.head == nullptr || list.head->next == nullptr)
+        return;
+
+    SinglyLinkedList<T> leftHalf, rightHalf;
+    init(leftHalf);
+    init(rightHalf);
+
+    splitList(list, leftHalf, rightHalf);
+    mergeSortList(leftHalf, cmp);
+    mergeSortList(rightHalf, cmp);
+    mergeTwoSortedListsInPlace(leftHalf, rightHalf, list, cmp);
 }
