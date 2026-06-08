@@ -212,27 +212,27 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 + In theo chiều thuận.
 + In theo chiều nghịch.
 
-- Reverse (Đảo chiều Singly Linked List).
+- Reverse (Đảo chiều Doubly Linked List).
 
-- findMiddle (Tìm node ở giữa của Singly Linked List).
+- findMiddle (Tìm node ở giữa của Doubly Linked List).
 
-- isSymmetric (Kiểm tra tính đối xứng của Singly Linked List).
+- isSymmetric (Kiểm tra tính đối xứng của Doubly Linked List).
 
-- kthFromTail (Tìm node thứ k tính từ tail của Singly Linked List).
+- kthFromTail (Tìm node thứ k tính từ tail của Doubly Linked List).
 
-- rotateRight (xoay phải Singly Linked List k lần).
+- rotateRight (xoay phải Doubly Linked List k lần).
 
-- Merge (Trộn hai Singly Linked Lists đã được sắp xếp):
-+ Thực hiện không tại chỗ (tạo ra một Singly Linked List để lưu kết quả).
-+ Thực hiện tại chỗ (nối trực tiếp trên hai Singly Linked Lists, phá hủy hai Singly Linked Lists đã cho).
+- Merge (Trộn hai Doubly Linked Lists đã được sắp xếp):
++ Thực hiện không tại chỗ (tạo ra một Doubly Linked List để lưu kết quả).
++ Thực hiện tại chỗ (nối trực tiếp trên hai Doubly Linked Lists, phá hủy hai Doubly Linked Lists đã cho).
 
-- Split (Chia đôi một Singly Linked List thành hai phần).
+- Split (Chia đôi một Doubly Linked List thành hai phần).
 
-- Merge sort Singly Linked List.
+- Merge sort Doubly Linked List.
 
-- Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List).
+- Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Doubly Linked List).
 
-- Merge k Singly Linked Lists (Trộn k Singly Linked Lists đã được sắp xếp).
+- Merge k Doubly Linked Lists (Trộn k Doubly Linked Lists đã được sắp xếp).
 =====================================================================================================================
 
 =====================================================================================================================
