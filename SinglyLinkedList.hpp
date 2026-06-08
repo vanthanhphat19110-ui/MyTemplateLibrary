@@ -552,3 +552,45 @@ void swapNodesInPairs(SinglyLinkedList<T> &list)
         curr = curr->next;
     list.tail = curr;
 }
+
+template <typename T>
+bool hasCycle(const SinglyLinkedList<T> &list)
+{
+    SLLNode<T> *slow = list.head, *fast = list.head;
+    while (fast != nullptr && fast->next != nullptr)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast)
+            return true;
+    }
+    return false;
+}
+
+template <typename T>
+SLLNode<T> *findCycleStart(const SinglyLinkedList<T> &list)
+{
+    bool hasCycle = false;
+    SLLNode<T> *slow = list.head, *fast = list.head;
+    while (fast != nullptr && fast->next != nullptr)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast)
+        {
+            hasCycle = true;
+            break;
+        }
+    }
+
+    if (!hasCycle)
+        return nullptr;
+
+    SLLNode<T> *p1 = list.head, *p2 = slow;
+    while (p1 != p2)
+    {
+        p1 = p1->next;
+        p2 = p2->next;
+    }
+    return p1;
+}

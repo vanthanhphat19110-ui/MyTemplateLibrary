@@ -180,7 +180,9 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 - Swap nodes in pairs (Hoán đổi sau mỗi hai node trong Singly Linked List): Đã hoàn thành.
 
-- detectCycle (Kiểm tra xem Singly Linked List có vòng hay không ?, nếu có tìm điểm vòng).
+- hasCycle (Kiểm tra xem Singly Linked List có vòng hay không ?): Đã hoàn thành.
+
+- findCycleStart (nếu Singly Linked List có vòng thì tìm điểm vòng): Đã hoàn thành.
 
 - Merge k Singly Linked Lists (Trộn k Singly Linked Lists đã được sắp xếp).
 =====================================================================================================================
