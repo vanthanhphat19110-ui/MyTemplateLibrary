@@ -147,11 +147,13 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 + Chèn node ở cuối.
 + Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
 
-- Delete: Đã hoàn thành.
+- Remove: Đã hoàn thành.
 + Xóa một node ở đầu.
 + Xóa một node ở cuối.
 + Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
 + Xóa tất cả các node có giá trị cụ thể.
++ Xóa tất cả các node trùng nhau trong một Singly Linked List đã được sắp xếp, giữ lại node đầu tiên.
++ Xóa tất cả các node trùng nhau trong một Singly Linked List đã được sắp xếp.
 + Xóa tất cả các node.
 
 - Search: Đã hoàn thành.
@@ -201,11 +203,13 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 + Chèn node ở cuối.
 + Chèn node ở vị trí bất kì (chỉ số node tính từ 01).
 
-- Delete:
+- Remove:
 + Xóa một node ở đầu.
 + Xóa một node ở cuối.
 + Xóa một node ở vị trí bất kì (chỉ số node tính từ 01).
 + Xóa tất cả các node có giá trị cụ thể.
++ Xóa tất cả các node trùng nhau trong một Doubly Linked List đã được sắp xếp, giữ lại node đầu tiên.
++ Xóa tất cả các node trùng nhau trong một Doubly Linked List đã được sắp xếp.
 + Xóa tất cả các node.
 
 - Search.
