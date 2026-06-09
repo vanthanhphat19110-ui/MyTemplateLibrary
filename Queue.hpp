@@ -1,4 +1,4 @@
-/* Thư viện Queue */
+/* Thư viện Queue. */
 
 template <typename T>
 struct QueueNode
