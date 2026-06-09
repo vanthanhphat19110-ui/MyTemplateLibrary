@@ -52,7 +52,7 @@ int size(const PriorityQueue<T, Comp> &pq)
     return pq.size;
 }
 
-/* Cần đảm bảo Priority Queue khác rỗng trước khi gọi top. */
+/* Cần đảm bảo Priority Queue khác rỗng trước khi gọi top(). */
 template <typename T, typename Comp = std::less<T>>
 const T &top(const PriorityQueue<T, Comp> &pq)
 {
