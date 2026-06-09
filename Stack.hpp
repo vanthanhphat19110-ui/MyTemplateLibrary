@@ -34,6 +34,7 @@ int size(const Stack<T> &st)
     return st.size;
 }
 
+/* Cần đảm bảo Stack khác rỗng trước khi gọi top. */
 template <typename T>
 const T &top(const Stack<T> &st)
 {
