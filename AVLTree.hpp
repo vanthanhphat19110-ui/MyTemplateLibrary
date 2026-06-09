@@ -1,4 +1,7 @@
 /* Thư viện AVL Tree. */
+/* AVL Tree:
+- Duplicate values are ignored.
+- All operations on AVL Tree must use the same comparator. */
 
 #include <iostream>
 #include <functional>
