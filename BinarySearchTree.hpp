@@ -1,4 +1,7 @@
 /* Thư viện Binary Search Tree. */
+/* Binary Search Tree:
+- Duplicate values are ignored.
+- All operations on Binary Search Tree must use the same comparator. */
 
 #include <iostream>
 #include <functional>
