@@ -36,6 +36,7 @@ int size(const Queue<T> &q)
     return q.size;
 }
 
+/* Cần đảm bảo Queue khác rỗng trước khi gọi top(). */
 template <typename T>
 const T &front(const Queue<T> &q)
 {
