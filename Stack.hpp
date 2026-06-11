@@ -11,16 +11,9 @@ struct StackNode
 template <typename T>
 struct Stack
 {
-    StackNode<T> *top;
-    int size;
+    StackNode<T> *top = nullptr;
+    int size = 0;
 };
-
-template <typename T>
-void init(Stack<T> &st)
-{
-    st.top = nullptr;
-    st.size = 0;
-}
 
 template <typename T>
 bool isEmpty(const Stack<T> &st)
