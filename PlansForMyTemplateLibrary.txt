@@ -244,8 +244,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 08. Thư viện AVL Tree:
 
-- Initialize: Đã hoàn thành.
-
 - isEmpty: Đã hoàn thành.
 
 - Tính chiều cao của cây: Đã hoàn thành.

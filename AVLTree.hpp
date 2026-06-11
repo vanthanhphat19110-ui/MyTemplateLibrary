@@ -3,6 +3,7 @@
 /* Note: Duplicate values are ignored. */
 
 #include <iostream>
+#include <algorithm>
 #include <functional>
 
 template <typename T>
@@ -17,16 +18,9 @@ struct AVLNode
 template <typename T, typename Comp = std::less<T>>
 struct AVLTree
 {
-    AVLNode<T> *root;
-    Comp cmp;
+    AVLNode<T> *root = nullptr;
+    Comp cmp{};
 };
-
-template <typename T, typename Comp = std::less<T>>
-void init(AVLTree<T, Comp> &tree)
-{
-    tree.root = nullptr;
-    tree.cmp = Comp();
-}
 
 template <typename T, typename Comp = std::less<T>>
 bool isEmpty(const AVLTree<T, Comp> &tree)
@@ -221,7 +215,7 @@ void insert(AVLTree<T, Comp> &tree, const T &value)
 }
 
 template <typename T>
-AVLNode<T> *findMin(AVLNode<T> *root)
+AVLNode<T> *findLeftMost(AVLNode<T> *root)
 {
     if (root == nullptr)
         return nullptr;
@@ -231,13 +225,13 @@ AVLNode<T> *findMin(AVLNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *findMin(const AVLTree<T, Comp> &tree)
+AVLNode<T> *findLeftMost(const AVLTree<T, Comp> &tree)
 {
-    return findMin(tree.root);
+    return findLeftMost(tree.root);
 }
 
 template <typename T>
-AVLNode<T> *findMax(AVLNode<T> *root)
+AVLNode<T> *findRightMost(AVLNode<T> *root)
 {
     if (root == nullptr)
         return nullptr;
@@ -247,9 +241,9 @@ AVLNode<T> *findMax(AVLNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *findMax(const AVLTree<T, Comp> &tree)
+AVLNode<T> *findRightMost(const AVLTree<T, Comp> &tree)
 {
-    return findMax(tree.root);
+    return findRightMost(tree.root);
 }
 
 template <typename T, typename Comp = std::less<T>>
@@ -271,7 +265,7 @@ AVLNode<T> *remove(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
         }
         else // root->left != nullptr && root->right != nullptr
         {
-            AVLNode<T> *temp = findMax(root->left);
+            AVLNode<T> *temp = findRightMost(root->left);
             root->data = temp->data;
             root->left = remove(root->left, temp->data, cmp);
         }
@@ -286,7 +280,7 @@ void remove(AVLTree<T, Comp> &tree, const T &value)
 }
 
 template <typename T, typename Comp = std::less<T>>
-bool isExisted(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
+bool contains(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
 {
     AVLNode<T> *curr = root;
     while (curr != nullptr)
@@ -302,9 +296,9 @@ bool isExisted(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-bool isExisted(const AVLTree<T, Comp> &tree, const T &value)
+bool contains(const AVLTree<T, Comp> &tree, const T &value)
 {
-    return isExisted(tree.root, value, tree.cmp);
+    return contains(tree.root, value, tree.cmp);
 }
 
 template <typename T, typename Comp = std::less<T>>
