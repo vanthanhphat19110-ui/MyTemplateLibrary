@@ -4,7 +4,7 @@
 02. T& --> không copy (&) và cho phép thay đổi (no const). */
 // Chú ý điều kiện vòng lặp.
 
-#include <functional> // Chứa std::less<> mặc định.
+#include <functional>
 
 /* Linear search (Sequential search):
 - Vietnamese: Tìm kiếm tuyến tính (Tìm kiếm tuần tự).
