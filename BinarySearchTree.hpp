@@ -137,7 +137,13 @@ BSTNode<T> *findLeftMost(BSTNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-BSTNode<T> *findLeftMost(const BinarySearchTree<T, Comp> &tree)
+BSTNode<T> *findLeftMost(BinarySearchTree<T, Comp> &tree)
+{
+    return findLeftMost(tree.root);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const BSTNode<T> *findLeftMost(const BinarySearchTree<T, Comp> &tree)
 {
     return findLeftMost(tree.root);
 }
@@ -153,7 +159,13 @@ BSTNode<T> *findRightMost(BSTNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-BSTNode<T> *findRightMost(const BinarySearchTree<T, Comp> &tree)
+BSTNode<T> *findRightMost(BinarySearchTree<T, Comp> &tree)
+{
+    return findRightMost(tree.root);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const BSTNode<T> *findRightMost(const BinarySearchTree<T, Comp> &tree)
 {
     return findRightMost(tree.root);
 }
@@ -230,7 +242,13 @@ BSTNode<T> *find(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-BSTNode<T> *find(const BinarySearchTree<T, Comp> &tree, const T &value)
+BSTNode<T> *find(BinarySearchTree<T, Comp> &tree, const T &value)
+{
+    return find(tree.root, value, tree.cmp);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const BSTNode<T> *find(const BinarySearchTree<T, Comp> &tree, const T &value)
 {
     return find(tree.root, value, tree.cmp);
 }
