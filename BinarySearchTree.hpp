@@ -3,6 +3,7 @@
 /* Note: Duplicate values are ignored. */
 
 #include <iostream>
+#include <algorithm>
 #include <functional>
 
 template <typename T>
@@ -16,16 +17,9 @@ struct BSTNode
 template <typename T, typename Comp = std::less<T>>
 struct BinarySearchTree
 {
-    BSTNode<T> *root;
-    Comp cmp;
+    BSTNode<T> *root = nullptr;
+    Comp cmp{};
 };
-
-template <typename T, typename Comp = std::less<T>>
-void init(BinarySearchTree<T, Comp> &tree)
-{
-    tree.root = nullptr;
-    tree.cmp = Comp();
-}
 
 template <typename T, typename Comp = std::less<T>>
 bool isEmpty(const BinarySearchTree<T, Comp> &tree)
@@ -133,7 +127,7 @@ void insert(BinarySearchTree<T, Comp> &tree, const T &value)
 }
 
 template <typename T>
-BSTNode<T> *findMin(BSTNode<T> *root)
+BSTNode<T> *findLeftMost(BSTNode<T> *root)
 {
     if (root == nullptr)
         return nullptr;
@@ -143,13 +137,13 @@ BSTNode<T> *findMin(BSTNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-BSTNode<T> *findMin(const BinarySearchTree<T, Comp> &tree)
+BSTNode<T> *findLeftMost(const BinarySearchTree<T, Comp> &tree)
 {
-    return findMin(tree.root);
+    return findLeftMost(tree.root);
 }
 
 template <typename T>
-BSTNode<T> *findMax(BSTNode<T> *root)
+BSTNode<T> *findRightMost(BSTNode<T> *root)
 {
     if (root == nullptr)
         return nullptr;
@@ -159,9 +153,9 @@ BSTNode<T> *findMax(BSTNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-BSTNode<T> *findMax(const BinarySearchTree<T, Comp> &tree)
+BSTNode<T> *findRightMost(const BinarySearchTree<T, Comp> &tree)
 {
-    return findMax(tree.root);
+    return findRightMost(tree.root);
 }
 
 template <typename T, typename Comp = std::less<T>>
@@ -183,7 +177,7 @@ BSTNode<T> *remove(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
         }
         else // root->left != nullptr && root->right != nullptr
         {
-            BSTNode<T> *temp = findMax(root->left);
+            BSTNode<T> *temp = findRightMost(root->left);
             root->data = temp->data;
             root->left = remove(root->left, temp->data, cmp);
         }
@@ -198,7 +192,7 @@ void remove(BinarySearchTree<T, Comp> &tree, const T &value)
 }
 
 template <typename T, typename Comp = std::less<T>>
-bool isExisted(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
+bool contains(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 {
     BSTNode<T> *curr = root;
     while (curr != nullptr)
@@ -214,9 +208,9 @@ bool isExisted(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-bool isExisted(const BinarySearchTree<T, Comp> &tree, const T &value)
+bool contains(const BinarySearchTree<T, Comp> &tree, const T &value)
 {
-    return isExisted(tree.root, value, tree.cmp);
+    return contains(tree.root, value, tree.cmp);
 }
 
 template <typename T, typename Comp = std::less<T>>
