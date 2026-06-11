@@ -4,7 +4,7 @@
 02. T& --> không copy (&) và cho phép thay đổi (no const). */
 // Chú ý điều kiện vòng lặp.
 
-#include <functional> // chứa std::less<> mặc định.
+#include <functional>
 
 template <typename T>
 void mySwap(T &a, T &b)
