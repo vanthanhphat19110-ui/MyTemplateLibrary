@@ -136,8 +136,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 06. Thư viện Singly Linked List (Danh sách liên kết đơn):
 
-- Initialize: Đã hoàn thành.
-
 - isEmpty: Đã hoàn thành.
 
 - Size: Đã hoàn thành.
@@ -191,8 +189,6 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 =====================================================================================================================
 07. Thư viện Doubly Linked List (Danh sách liên kết đôi):
-
-- Initialize.
 
 - isEmpty.
 
@@ -274,9 +270,9 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 
 - Insert (Xây cây): Đã hoàn thành.
 
-- findMin: Đã hoàn thành.
+- findLeftMost: Đã hoàn thành.
 
-- findMax: Đã hoàn thành.
+- findRightMost: Đã hoàn thành.
 
 - Remove (Xóa cây): Đã hoàn thành.
 + Node bị xóa không có con: xóa node rồi trả về nullptr.
@@ -301,7 +297,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 09. Thư viện Hash Table (Bảng băm):
 - Note:
-- Thao tác: initialize, currSize, getBucketIndex, isExisted, find, insert, remove, clear.
+- Thao tác: size, getBucketIndex, contains, find, insert, remove, clear.
 - Xử lý đụng độ (collision handling):
 + Open addressing (địa chỉ mở):
     . Linear probing: h(k) = (k + i) % size

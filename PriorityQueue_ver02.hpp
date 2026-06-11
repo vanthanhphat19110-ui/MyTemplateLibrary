@@ -59,7 +59,6 @@ HeapNode<T> *getHeapNode(HeapNode<T> *root, int index)
         return root;
 
     Stack<int> st;
-    init(st);
 
     while (index > 0)
     {

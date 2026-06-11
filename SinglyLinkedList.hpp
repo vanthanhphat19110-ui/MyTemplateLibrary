@@ -1,4 +1,4 @@
-/* Singly Linked List. */
+/* Thư viện Singly Linked List. */
 
 #include <iostream>
 #include <functional>
@@ -16,18 +16,10 @@ struct SLLNode
 template <typename T>
 struct SinglyLinkedList
 {
-    SLLNode<T> *head;
-    SLLNode<T> *tail;
-    int size;
+    SLLNode<T> *head = nullptr;
+    SLLNode<T> *tail = nullptr;
+    int size = 0;
 };
-
-template <typename T>
-void init(SinglyLinkedList<T> &list)
-{
-    list.head = nullptr;
-    list.tail = nullptr;
-    list.size = 0;
-}
 
 template <typename T>
 bool isEmpty(const SinglyLinkedList<T> &list)
@@ -280,7 +272,7 @@ void clear(SinglyLinkedList<T> &list)
 }
 
 template <typename T>
-bool isExisted(const SinglyLinkedList<T> &list, const T &value)
+bool contains(const SinglyLinkedList<T> &list, const T &value)
 {
     SLLNode<T> *curr = list.head;
     while (curr != nullptr)
@@ -356,7 +348,7 @@ void printBackward(SinglyLinkedList<T> &list)
 }
 
 template <typename T>
-SLLNode<T> *findMiddle(const SinglyLinkedList<T> &list)
+const SLLNode<T> *findMiddle(const SinglyLinkedList<T> &list)
 {
     SLLNode<T> *slow = list.head, *fast = list.head;
     while (fast != nullptr && fast->next != nullptr)
@@ -455,7 +447,6 @@ template <typename T, typename Comp = std::less<T>>
 SinglyLinkedList<T> mergeTwoSortedLists(const SinglyLinkedList<T> &list1, const SinglyLinkedList<T> &list2, const Comp &cmp = Comp())
 {
     SinglyLinkedList<T> ans;
-    init(ans);
 
     SLLNode<T> *p1 = list1.head, *p2 = list2.head;
     while (p1 != nullptr && p2 != nullptr)
