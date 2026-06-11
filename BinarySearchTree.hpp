@@ -1,8 +1,6 @@
 /* Thư viện Binary Search Tree. */
 
-/* Binary Search Tree:
-- Duplicate values are ignored.
-- All operations on Binary Search Tree must use the same comparator. */
+/* Note: Duplicate values are ignored. */
 
 #include <iostream>
 #include <functional>
@@ -15,20 +13,22 @@ struct BSTNode
     BSTNode(const T &value) : data(value), left(nullptr), right(nullptr) {};
 };
 
-template <typename T>
+template <typename T, typename Comp = std::less<T>>
 struct BinarySearchTree
 {
     BSTNode<T> *root;
+    Comp cmp;
 };
 
-template <typename T>
-void init(BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+void init(BinarySearchTree<T, Comp> &tree)
 {
     tree.root = nullptr;
+    tree.cmp = Comp();
 }
 
-template <typename T>
-bool isEmpty(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+bool isEmpty(const BinarySearchTree<T, Comp> &tree)
 {
     return tree.root == nullptr;
 }
@@ -41,8 +41,8 @@ int height(BSTNode<T> *root)
     return 1 + std::max(height(root->left), height(root->right));
 }
 
-template <typename T>
-int height(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+int height(const BinarySearchTree<T, Comp> &tree)
 {
     return height(tree.root);
 }
@@ -55,8 +55,8 @@ int size(BSTNode<T> *root)
     return 1 + size(root->left) + size(root->right);
 }
 
-template <typename T>
-int size(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+int size(const BinarySearchTree<T, Comp> &tree)
 {
     return size(tree.root);
 }
@@ -71,8 +71,8 @@ void preOrder(BSTNode<T> *root)
     preOrder(root->right);
 }
 
-template <typename T>
-void preOrder(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+void preOrder(const BinarySearchTree<T, Comp> &tree)
 {
     preOrder(tree.root);
 }
@@ -87,8 +87,8 @@ void inOrder(BSTNode<T> *root)
     inOrder(root->right);
 }
 
-template <typename T>
-void inOrder(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+void inOrder(const BinarySearchTree<T, Comp> &tree)
 {
     inOrder(tree.root);
 }
@@ -103,8 +103,8 @@ void postOrder(BSTNode<T> *root)
     std::cout << root->data << " ";
 }
 
-template <typename T>
-void postOrder(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+void postOrder(const BinarySearchTree<T, Comp> &tree)
 {
     postOrder(tree.root);
 }
@@ -127,9 +127,9 @@ BSTNode<T> *insert(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-void insert(BinarySearchTree<T> &tree, const T &value, const Comp &cmp = Comp())
+void insert(BinarySearchTree<T, Comp> &tree, const T &value)
 {
-    tree.root = insert(tree.root, value, cmp);
+    tree.root = insert(tree.root, value, tree.cmp);
 }
 
 template <typename T>
@@ -142,8 +142,8 @@ BSTNode<T> *findMin(BSTNode<T> *root)
     return root;
 }
 
-template <typename T>
-BSTNode<T> *findMin(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+BSTNode<T> *findMin(const BinarySearchTree<T, Comp> &tree)
 {
     return findMin(tree.root);
 }
@@ -158,8 +158,8 @@ BSTNode<T> *findMax(BSTNode<T> *root)
     return root;
 }
 
-template <typename T>
-BSTNode<T> *findMax(const BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+BSTNode<T> *findMax(const BinarySearchTree<T, Comp> &tree)
 {
     return findMax(tree.root);
 }
@@ -192,9 +192,9 @@ BSTNode<T> *remove(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-void remove(BinarySearchTree<T> &tree, const T &value, const Comp &cmp = Comp())
+void remove(BinarySearchTree<T, Comp> &tree, const T &value)
 {
-    tree.root = remove(tree.root, value, cmp);
+    tree.root = remove(tree.root, value, tree.cmp);
 }
 
 template <typename T, typename Comp = std::less<T>>
@@ -214,9 +214,9 @@ bool isExisted(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-bool isExisted(const BinarySearchTree<T> &tree, const T &value, const Comp &cmp = Comp())
+bool isExisted(const BinarySearchTree<T, Comp> &tree, const T &value)
 {
-    return isExisted(tree.root, value, cmp);
+    return isExisted(tree.root, value, tree.cmp);
 }
 
 template <typename T, typename Comp = std::less<T>>
@@ -236,9 +236,9 @@ BSTNode<T> *find(BSTNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-BSTNode<T> *find(const BinarySearchTree<T> &tree, const T &value, const Comp &cmp = Comp())
+BSTNode<T> *find(const BinarySearchTree<T, Comp> &tree, const T &value)
 {
-    return find(tree.root, value, cmp);
+    return find(tree.root, value, tree.cmp);
 }
 
 template <typename T>
@@ -252,8 +252,8 @@ void clear(BSTNode<T> *&root)
     root = nullptr;
 }
 
-template <typename T>
-void clear(BinarySearchTree<T> &tree)
+template <typename T, typename Comp = std::less<T>>
+void clear(BinarySearchTree<T, Comp> &tree)
 {
     clear(tree.root);
 }
