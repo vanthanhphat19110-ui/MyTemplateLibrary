@@ -177,6 +177,7 @@ void removeAllValues(SinglyLinkedList<T> &list, const T &value)
     }
     list.head = dummy->next;
     delete dummy;
+
     if (list.head == nullptr)
         list.tail = nullptr;
     else // list.head != nullptr
@@ -348,7 +349,7 @@ void printBackward(SinglyLinkedList<T> &list)
 }
 
 template <typename T>
-const SLLNode<T> *findMiddle(const SinglyLinkedList<T> &list)
+SLLNode<T> *findMiddle(SinglyLinkedList<T> &list)
 {
     SLLNode<T> *slow = list.head, *fast = list.head;
     while (fast != nullptr && fast->next != nullptr)
@@ -578,9 +579,6 @@ void mergeSortList(SinglyLinkedList<T> &list, const Comp &cmp = Comp())
         return;
 
     SinglyLinkedList<T> leftHalf, rightHalf;
-    init(leftHalf);
-    init(rightHalf);
-
     splitList(list, leftHalf, rightHalf);
     mergeSortList(leftHalf, cmp);
     mergeSortList(rightHalf, cmp);
