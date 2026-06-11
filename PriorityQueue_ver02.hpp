@@ -28,17 +28,10 @@ struct HeapNode
 template <typename T, typename Comp = std::less<T>>
 struct PriorityQueue
 {
-    HeapNode<T> *root;
-    int size;
-    Comp cmp;
+    HeapNode<T> *root = nullptr;
+    int size = 0;
+    Comp cmp{};
 };
-
-template <typename T, typename Comp = std::less<T>>
-void init(PriorityQueue<T, Comp> &pq)
-{
-    pq.root = nullptr;
-    pq.size = 0;
-}
 
 template <typename T, typename Comp = std::less<T>>
 bool isEmpty(const PriorityQueue<T, Comp> &pq)

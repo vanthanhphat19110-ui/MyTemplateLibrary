@@ -129,7 +129,7 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 05. Thư viện Priority Queue (Hàng đợi ưu tiên):
 - Note: Priority Queue is based on Complete Binary Tree.
-- Thao tác: initialize, isEmpty, size, getHeapNode, heapifyUp, heapifyDown, push, pop, top, clear.
+- Thao tác: isEmpty, size, getHeapNode, heapifyUp, heapifyDown, push, pop, top, clear.
 - Trạng thái: Đã hoàn thành.
 =====================================================================================================================
 
