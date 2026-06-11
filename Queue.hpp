@@ -11,18 +11,10 @@ struct QueueNode
 template <typename T>
 struct Queue
 {
-    QueueNode<T> *front;
-    QueueNode<T> *back;
-    int size;
+    QueueNode<T> *front = nullptr;
+    QueueNode<T> *back = nullptr;
+    int size = 0;
 };
-
-template <typename T>
-void init(Queue<T> &q)
-{
-    q.front = nullptr;
-    q.back = nullptr;
-    q.size = 0;
-}
 
 template <typename T>
 bool isEmpty(const Queue<T> &q)

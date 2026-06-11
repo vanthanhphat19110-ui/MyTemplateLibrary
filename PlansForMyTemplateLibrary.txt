@@ -115,14 +115,14 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 =====================================================================================================================
 03. Thư viện Stack (Ngăn xếp):
 - Note: Stack is based on Singly Linked List.
-- Thao tác: initialize, isEmpty, size, push, pop, top, clear.
+- Thao tác: isEmpty, size, push, pop, top, clear.
 - Trạng thái: Đã hoàn thành.
 =====================================================================================================================
 
 =====================================================================================================================
 04. Thư viện Queue (Hàng đợi):
 - Note: Queue is based on Singly Linked List.
-- Thao tác: initialize, isEmpty, size, enqueue, dequeue, front, clear.
+- Thao tác: isEmpty, size, enqueue, dequeue, front, clear.
 - Trạng thái: Đã hoàn thành.
 =====================================================================================================================
 
