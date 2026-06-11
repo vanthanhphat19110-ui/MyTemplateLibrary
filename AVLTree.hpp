@@ -225,7 +225,13 @@ AVLNode<T> *findLeftMost(AVLNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *findLeftMost(const AVLTree<T, Comp> &tree)
+AVLNode<T> *findLeftMost(AVLTree<T, Comp> &tree)
+{
+    return findLeftMost(tree.root);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *findLeftMost(const AVLTree<T, Comp> &tree)
 {
     return findLeftMost(tree.root);
 }
@@ -241,7 +247,13 @@ AVLNode<T> *findRightMost(AVLNode<T> *root)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *findRightMost(const AVLTree<T, Comp> &tree)
+AVLNode<T> *findRightMost(AVLTree<T, Comp> &tree)
+{
+    return findRightMost(tree.root);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *findRightMost(const AVLTree<T, Comp> &tree)
 {
     return findRightMost(tree.root);
 }
@@ -318,7 +330,13 @@ AVLNode<T> *find(AVLNode<T> *root, const T &value, const Comp &cmp = Comp())
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *find(const AVLTree<T, Comp> &tree, const T &value)
+AVLNode<T> *find(AVLTree<T, Comp> &tree, const T &value)
+{
+    return find(tree.root, value, tree.cmp);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *find(const AVLTree<T, Comp> &tree, const T &value)
 {
     return find(tree.root, value, tree.cmp);
 }
@@ -346,7 +364,13 @@ AVLNode<T> *kthSmallest(AVLNode<T> *root, int k)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *kthSmallest(const AVLTree<T, Comp> &tree, int k)
+AVLNode<T> *kthSmallest(AVLTree<T, Comp> &tree, int k)
+{
+    return kthSmallest(tree.root, k);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *kthSmallest(const AVLTree<T, Comp> &tree, int k)
 {
     return kthSmallest(tree.root, k);
 }
@@ -360,7 +384,13 @@ AVLNode<T> *kthBiggest(AVLNode<T> *root, int k)
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *kthBiggest(const AVLTree<T, Comp> &tree, int k)
+AVLNode<T> *kthBiggest(AVLTree<T, Comp> &tree, int k)
+{
+    return kthBiggest(tree.root, k);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *kthBiggest(const AVLTree<T, Comp> &tree, int k)
 {
     return kthBiggest(tree.root, k);
 }
@@ -383,7 +413,13 @@ AVLNode<T> *lowerBound(AVLNode<T> *root, const T &value, const Comp &cmp = Comp(
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *lowerBound(const AVLTree<T, Comp> &tree, const T &value)
+AVLNode<T> *lowerBound(AVLTree<T, Comp> &tree, const T &value)
+{
+    return lowerBound(tree.root, value, tree.cmp);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *lowerBound(const AVLTree<T, Comp> &tree, const T &value)
 {
     return lowerBound(tree.root, value, tree.cmp);
 }
@@ -406,7 +442,13 @@ AVLNode<T> *upperBound(AVLNode<T> *root, const T &value, const Comp &cmp = Comp(
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *upperBound(const AVLTree<T, Comp> &tree, const T &value)
+AVLNode<T> *upperBound(AVLTree<T, Comp> &tree, const T &value)
+{
+    return upperBound(tree.root, value, tree.cmp);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *upperBound(const AVLTree<T, Comp> &tree, const T &value)
 {
     return upperBound(tree.root, value, tree.cmp);
 }
@@ -453,7 +495,13 @@ AVLNode<T> *predecessor(AVLNode<T> *root, const T &value, const Comp &cmp = Comp
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *predecessor(const AVLTree<T, Comp> &tree, const T &value)
+AVLNode<T> *predecessor(AVLTree<T, Comp> &tree, const T &value)
+{
+    return predecessor(tree.root, value, tree.cmp);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *predecessor(const AVLTree<T, Comp> &tree, const T &value)
 {
     return predecessor(tree.root, value, tree.cmp);
 }
@@ -476,7 +524,13 @@ AVLNode<T> *successor(AVLNode<T> *root, const T &value, const Comp &cmp = Comp()
 }
 
 template <typename T, typename Comp = std::less<T>>
-AVLNode<T> *successor(const AVLTree<T, Comp> &tree, const T &value)
+AVLNode<T> *successor(AVLTree<T, Comp> &tree, const T &value)
+{
+    return successor(tree.root, value, tree.cmp);
+}
+
+template <typename T, typename Comp = std::less<T>>
+const AVLNode<T> *successor(const AVLTree<T, Comp> &tree, const T &value)
 {
     return successor(tree.root, value, tree.cmp);
 }
