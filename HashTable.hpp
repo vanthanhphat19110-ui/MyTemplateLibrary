@@ -1,7 +1,7 @@
 /* Thư viện Hash Table. */
 
 #include "AVLTree.hpp"
-/* T = Pair<K, V> */
+/* T = Pair<K, V>, Comp = ComparePair<K, V> */
 
 template <typename K, typename V>
 struct Pair
@@ -21,80 +21,89 @@ struct ComparePair
     }
 };
 
-template <typename K, typename V>
+template <typename K, typename V, typename HashFunc>
 struct HashTable
 {
-    AVLTree<Pair<K, V>> *buckets;
-    int tableSize;
-    int currSize;
+    AVLTree<Pair<K, V>, ComparePair<K, V>> *buckets = nullptr;
+    int tableSize = 0;
+    int currSize = 0;
+    HashFunc hash{};
 };
 
 // Mặc định, hash table có 101 buckets nếu không truyền tham số cụ thể.
-template <typename K, typename V>
-void init(HashTable<K, V> &ht, int bucketCount = 101)
+template <typename K, typename V, typename HashFunc>
+void init(HashTable<K, V, HashFunc> &ht, int bucketCount = 101)
 {
+    if (bucketCount <= 0)
+        bucketCount = 101;
+    ht.buckets = new AVLTree<Pair<K, V>, ComparePair<K, V>>[bucketCount];
     ht.tableSize = bucketCount;
     ht.currSize = 0;
-    ht.buckets = new AVLTree<Pair<K, V>>[bucketCount];
-    for (int i = 0; i < bucketCount; i++)
-        init(ht.buckets[i]);
 }
 
-template <typename K, typename V>
-int size(const HashTable<K, V> &ht)
+template <typename K, typename V, typename HashFunc>
+int size(const HashTable<K, V, HashFunc> &ht)
 {
     return ht.currSize;
 }
 
 template <typename K, typename V, typename HashFunc>
-int getBucketIndex(const HashTable<K, V> &ht, const K &key, const HashFunc &hash)
+int getBucketIndex(const HashTable<K, V, HashFunc> &ht, const K &key)
 {
-    size_t h = static_cast<size_t>(hash(key));
+    size_t h = static_cast<size_t>(ht.hash(key));
     return static_cast<int>(h % ht.tableSize);
 }
 
-template <typename K, typename V, typename HashFunc, typename Comp = ComparePair<K, V>>
-bool isExisted(const HashTable<K, V> &ht, const K &key, const HashFunc &hash, const Comp &cmp = Comp())
+template <typename K, typename V, typename HashFunc>
+bool contains(const HashTable<K, V, HashFunc> &ht, const K &key)
 {
-    int index = getBucketIndex(ht, key, hash);
+    int index = getBucketIndex(ht, key);
     Pair<K, V> node(key, V());
-    return isExisted(ht.buckets[index], node, cmp);
+    return contains(ht.buckets[index], node);
 }
 
-template <typename K, typename V, typename HashFunc, typename Comp = ComparePair<K, V>>
-const AVLNode<Pair<K, V>> *find(const HashTable<K, V> &ht, const K &key, const HashFunc &hash, const Comp &cmp = Comp())
+template <typename K, typename V, typename HashFunc>
+AVLNode<Pair<K, V>> *find(HashTable<K, V, HashFunc> &ht, const K &key)
 {
-    int index = getBucketIndex(ht, key, hash);
+    int index = getBucketIndex(ht, key);
     Pair<K, V> node(key, V());
-    return find(ht.buckets[index], node, cmp);
+    return find(ht.buckets[index], node);
 }
 
-template <typename K, typename V, typename HashFunc, typename Comp = ComparePair<K, V>>
-void insert(HashTable<K, V> &ht, const K &key, const V &value, const HashFunc &hash, const Comp &cmp = Comp())
+template <typename K, typename V, typename HashFunc>
+const AVLNode<Pair<K, V>> *find(const HashTable<K, V, HashFunc> &ht, const K &key)
 {
-    int index = getBucketIndex(ht, key, hash);
+    int index = getBucketIndex(ht, key);
+    Pair<K, V> node(key, V());
+    return find(ht.buckets[index], node);
+}
+
+template <typename K, typename V, typename HashFunc>
+void insert(HashTable<K, V, HashFunc> &ht, const K &key, const V &value)
+{
+    int index = getBucketIndex(ht, key);
     Pair<K, V> node(key, value);
-    if (!isExisted(ht.buckets[index], node, cmp))
+    if (!contains(ht.buckets[index], node))
     {
-        insert(ht.buckets[index], node, cmp);
+        insert(ht.buckets[index], node);
         ht.currSize++;
     }
 }
 
-template <typename K, typename V, typename HashFunc, typename Comp = ComparePair<K, V>>
-void remove(HashTable<K, V> &ht, const K &key, const HashFunc &hash, const Comp &cmp = Comp())
+template <typename K, typename V, typename HashFunc>
+void remove(HashTable<K, V, HashFunc> &ht, const K &key)
 {
-    int index = getBucketIndex(ht, key, hash);
+    int index = getBucketIndex(ht, key);
     Pair<K, V> node(key, V());
-    if (isExisted(ht.buckets[index], node, cmp))
+    if (contains(ht.buckets[index], node))
     {
-        remove(ht.buckets[index], node, cmp);
+        remove(ht.buckets[index], node);
         ht.currSize--;
     }
 }
 
-template <typename K, typename V>
-void clear(HashTable<K, V> &ht)
+template <typename K, typename V, typename HashFunc>
+void clear(HashTable<K, V, HashFunc> &ht)
 {
     for (int i = 0; i < ht.tableSize; i++)
         clear(ht.buckets[i]);
