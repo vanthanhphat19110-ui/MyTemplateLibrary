@@ -104,7 +104,7 @@ int binarySearchRecursion(T arr[], int sizeArr, const T &value, const Comp &cmp 
 template <typename T, typename Comp = std::less<T>>
 int binarySearchFirst(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
-    int index = -1;
+    int index = -1; // chú ý.
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
@@ -166,7 +166,7 @@ int binarySearchFirstRecursion(T arr[], int sizeArr, const T &value, const Comp 
 template <typename T, typename Comp = std::less<T>>
 int binarySearchLast(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
-    int index = -1;
+    int index = -1; // chú ý.
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
@@ -224,14 +224,14 @@ tức là: "key !< value" <=> "key >= value".
 - Space complexity: O(1) (loop), O(log n) (recursion).
 - Return:
 + Index of the first element that is NOT less than value according to comparator (if found).
-+ Otherwise, return right + 1. */
++ Otherwise, return (right + 1). */
 
 // Loop version.
 
 template <typename T, typename Comp = std::less<T>>
 int lowerBound(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
-    int index = right + 1;
+    int index = right + 1; // chú ý.
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
@@ -282,14 +282,14 @@ tức là: "value < key" <=> "key > value".
 - Space complexity: O(1) (loop), O(log n) (recursion).
 - Return:
 + Index of the first element greater than value according to comparator (if found).
-+ Otherwise, return right + 1. */
++ Otherwise, return (right + 1). */
 
 // Loop version.
 
 template <typename T, typename Comp = std::less<T>>
 int upperBound(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
-    int index = right + 1;
+    int index = right + 1; // chú ý.
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
