@@ -1,8 +1,10 @@
 /* Thư viện Sort. */
+
 /* Chú ý kiểu dữ liệu:
-01. const T& --> không copy (&) và không cho phép thay đổi (const).
-02. T& --> không copy (&) và cho phép thay đổi (no const). */
-// Chú ý điều kiện vòng lặp.
+01. const T& --> không copy (&) và không cho phép thay đổi dữ liệu (const).
+02. T& --> không copy (&) và cho phép thay đổi dữ liệu (no const). */
+
+/* Chú ý điều kiện vòng lặp của các hàm sort. */
 
 #include <functional>
 
@@ -106,6 +108,7 @@ void insertionSortShift(T arr[], int sizeArr, const Comp &cmp = Comp())
 - Stability: Yes.
 - In-place: Yes. */
 
+/* Lý do sử dụng upperbound là để đảm bảo tính stable của thuật toán. */
 template <typename T, typename Comp = std::less<T>>
 int upperBound(T arr[], int left, int right, const T &value, const Comp &cmp = Comp())
 {
@@ -178,7 +181,9 @@ void binaryInsertionSortShift(T arr[], int sizeArr, const Comp &cmp = Comp())
 - Time complexity: O(n) (best case), O(n^2) (worst case).
 - Space complexity: O(1) (worst case).
 - Stability: Yes.
-- In-place: Yes. */
+- In-place: Yes.
+- Nhận xét: bubble sort có time complexity, space complexity,
+stability, in-place giống hệt như insertion sort. */
 
 template <typename T, typename Comp = std::less<T>>
 void bubbleSort(T arr[], int left, int right, const Comp &cmp = Comp())
