@@ -325,8 +325,8 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
 + Dense graph: đồ thị đầy.
 + Đồ thị là một tập hợp gồm tất cả các đỉnh và các cạnh.
 + Đồ thị liên thông là đồ thị luôn luôn tồn tại một đường đi nối hai đỉnh bất kì.
-+ Cây khung là đồ thị liên thông và không có chu trình.
-+ Cây khung tối thiểu là cây khung có tổng trọng số là nhỏ nhất.
++ Cây khung (spanning tree) là đồ thị liên thông và không có chu trình.
++ Cây khung tối thiểu (MST = Minimum Spanning Tree) là cây khung có tổng trọng số là nhỏ nhất.
 
 - Thao tác:
 
@@ -338,15 +338,27 @@ Mặc định, các hàm sort sẽ sắp xếp theo thứ tự tăng dần.
     . Dạng đệ quy.
     . Dạng vòng lặp (sử dụng queue).
 
++ Kiểm tra tính liên thông của đồ thị.
+
++ Kiểm tra đồ thị có chu trình hay không ?
+
++ Kiểm tra đồ thị hai phía (bipartite graph).
+
++ Kiểm tra đỉnh trụ và cạnh cầu.
+
++ Thuật toán Kosaraju: tìm thành phần liên thông mạnh.
+
 + Thuật toán Prim: tìm cây khung tối thiểu.
 
-+ Thuật toán Kruskal: tìm cây khung tối thiểu.
++ Thuật toán Kruskal (kết hợp Disjoint Set Union (DSU)): tìm cây khung tối thiểu.
 
 + Thuật toán Dijkstra: tìm đường đi ngắn nhất trên đồ thị có trọng số không âm.
 
++ Thuật toán Bellman-Ford: tìm đường đi ngắn nhất trên đồ thị có trọng số âm.
+
 + Topological sort.
 
-+ Disjoint set.
++ Thuật toán Kahn.
 =====================================================================================================================
 
 =====================================================================================================================
