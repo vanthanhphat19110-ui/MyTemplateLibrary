@@ -2,8 +2,7 @@
 
 /* Chú ý kiểu dữ liệu:
 01. const T& --> không copy (&) và không cho phép thay đổi dữ liệu (const).
-02. T& --> không copy (&) và cho phép thay đổi dữ liệu (no const).
-*/
+02. T& --> không copy (&) và cho phép thay đổi dữ liệu (no const). */
 
 /*
 - Chú ý điều kiện vòng lặp của các hàm liên quan đến binary search.
